@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gourmet Mushroom Recipes (30+ Dishes) | Organic Anabe (ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ)</title>
+  <meta name="description" content="Explore 30 delicious and nutritious culinary recipes for farm-fresh Oyster and Milky mushrooms. Coastal sukkas, biryanis, pepper roasts, creamy pastas, and immunity broths." />
+
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Specific styles for the Recipes Vault page */
+    .recipe-vault-hero {
+      padding: 50px 24px 30px;
+      text-align: center;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    
+    .recipe-search-bar {
+      max-width: 600px;
+      margin: 24px auto 0;
+      position: relative;
+    }
+
+    .recipe-search-input {
+      width: 100%;
+      padding: 14px 20px 14px 50px;
+      border-radius: var(--radius-full);
+      border: 2px solid var(--secondary);
+      background: #ffffff;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      outline: none;
+      transition: all var(--transition-fast);
+    }
+
+    .recipe-search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(26, 67, 41, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--secondary);
+      pointer-events: none;
+    }
+
+    .filter-chips-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 24px auto 36px;
+      max-width: 1100px;
+      padding: 0 16px;
+    }
+
+    .filter-chip {
+      padding: 7px 18px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      border: 1px solid var(--surface-border);
+      background: var(--surface-card);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .filter-chip:hover {
+      border-color: var(--secondary);
+      color: var(--primary);
+    }
+
+    .filter-chip.active {
+      background: var(--primary);
+      color: var(--text-inverse);
+      border-color: var(--primary);
+      box-shadow: 0 2px 8px rgba(26,67,41,0.25);
+    }
+
+    .vault-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 28px;
+      max-width: 1280px;
+      margin: 0 auto 70px;
+      padding: 0 24px;
+    }
+
+    .btn-back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface-low);
+      border: 1px solid var(--secondary);
+      color: var(--primary);
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-back-home:hover {
+      background: var(--primary);
+      color: var(--text-inverse);
+    }
+
+    .card-actions-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .btn-card-wa {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: var(--primary-faint);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 8px 10px;
+      border-radius: var(--radius-md);
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-card-wa:hover {
+      background: var(--primary);
+      color: var(--text-inverse);
+    }
+
+    .btn-card-method {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: var(--secondary-fixed);
+      border: 1px solid var(--secondary);
+      color: var(--tertiary-dark);
+      padding: 8px 10px;
+      border-radius: var(--radius-md);
+      font-size: 0.74rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-card-method:hover {
+      background: #ffffff;
+    }
+
+    .chef-tip-box {
+      background: rgba(197, 160, 89, 0.12);
+      border-left: 3px solid var(--secondary);
+      padding: 12px 14px;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: 0.82rem;
+      color: var(--primary);
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body data-lang="en">
+
+  <!-- TOP TICKER -->
+  <div class="top-ticker">
+    <div class="top-ticker-content">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary-light);">menu_book</span>
+        <span id="ticker-heading">80 Curated Farm-to-Fork Gourmet Recipes • 40 Oyster, 40 Milky & 16 Charcoal Kebabs</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <span class="hidden-mobile">Direct Farm Gate Supply Across Karnataka</span>
+        <span>•</span>
+        <a href="tel:9663152977" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 4px;">
+          <span class="material-symbols-outlined" style="font-size: 15px; color: var(--secondary-light);">call</span>
+          <span>9663152977</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <div class="brand-logo-wrap">
+          <img src="assets/logo.png" alt="Organic Anabe Logo" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Organic Anabe</span>
+          <span class="brand-subtitle">Nature Purity In Every Bite</span>
+        </div>
+      </a>
+
+      <div class="nav-actions" style="margin-left: auto;">
+        <!-- Back to Home Button -->
+        <a href="index.html" class="btn-back-home" id="btn-back-home">
+          <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+          <span id="back-home-text">Back to Home</span>
+        </a>
+
+        <!-- Language Switcher Pill -->
+        <div class="lang-switch" role="group" aria-label="Language selection">
+          <button type="button" class="lang-btn active" id="lang-en-btn">EN</button>
+          <button type="button" class="lang-btn" id="lang-kn-btn">ಕನ್ನಡ</button>
+        </div>
+
+        <!-- WhatsApp Order CTA -->
+        <a href="https://wa.me/919663152977" target="_blank" class="btn-order-primary" id="wa-order-nav">
+          <span class="material-symbols-outlined" style="font-size: 18px; color: var(--secondary-light);">shopping_bag</span>
+          <span>Order Pack</span>
+          <span class="btn-order-price">₹79</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN VAULT HERO -->
+  <main>
+    <section class="recipe-vault-hero">
+      <div class="botanical-badge">
+        <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary);">restaurant_menu</span>
+        <span id="vault-badge">Complete Culinary Collection</span>
+      </div>
+      <h1 class="hero-title" id="vault-title" style="font-size: clamp(2.2rem, 4vw, 3.2rem);">
+        The Organic Anabe Recipe Vault
+      </h1>
+      <p class="hero-subtitle" id="vault-subtitle" style="max-width: 780px; margin: 0 auto;">
+        80 Artisanal Gourmet Recipes (40 Oyster + 40 Milky) Crafted for Healthy Living & Tandoori Feasts
+      </p>
+
+      <!-- Search Bar -->
+      <div class="recipe-search-bar">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="text" id="recipe-search-input" class="recipe-search-input" placeholder="Search recipes by name or ingredient... (e.g. Sukka, Biryani, Pepper, Garlic)" />
+      </div>
+    </section>
+
+    <!-- Main Mushroom Type Tabs -->
+    <div class="recipe-tabs" style="margin-bottom: 12px;">
+      <button type="button" class="recipe-tab-btn active" data-type="all" id="tab-type-all">
+        All Mushrooms (80)
+      </button>
+      <button type="button" class="recipe-tab-btn" data-type="oyster" id="tab-type-oyster">
+        Oyster Mushroom (40)
+      </button>
+      <button type="button" class="recipe-tab-btn" data-type="milky" id="tab-type-milky">
+        Milky Mushroom (40)
+      </button>
+    </div>
+
+    <!-- Category Filter Chips -->
+    <div class="filter-chips-wrap">
+      <button type="button" class="filter-chip active" data-category="all" id="chip-cat-all">All Courses (80)</button>
+      <button type="button" class="filter-chip" data-category="kebab" id="chip-cat-kebab" style="border-color: var(--secondary); background: rgba(197, 160, 89, 0.15); color: var(--primary);">🔥 Kebabs & Tandoor (16 Specialties!)</button>
+      <button type="button" class="filter-chip" data-category="coastal" id="chip-cat-coastal">Coastal & Karnataka</button>
+      <button type="button" class="filter-chip" data-category="curry" id="chip-cat-curry">Curries & Gravies</button>
+      <button type="button" class="filter-chip" data-category="dry" id="chip-cat-dry">Dry Roasts & Tawa</button>
+      <button type="button" class="filter-chip" data-category="rice" id="chip-cat-rice">Rice & Biryanis</button>
+      <button type="button" class="filter-chip" data-category="continental" id="chip-cat-continental">Continental & Pasta</button>
+      <button type="button" class="filter-chip" data-category="soup" id="chip-cat-soup">Immunity Soups & Broths</button>
+      <button type="button" class="filter-chip" data-category="snack" id="chip-cat-snack">Snacks & Starters</button>
+    </div>
+
+    <!-- RECIPES GRID (80 DYNAMIC STITCH CARDS) -->
+    <div class="vault-grid" id="recipes-grid">
+      <!-- Generated dynamically by js/recipes-page.js -->
+    </div>
+
+    <!-- Progressive Load Controls for Desktop & Mobile -->
+    <div id="pagination-controls" style="text-align: center; margin: -30px auto 70px; max-width: 600px; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 0 16px;">
+      <button type="button" id="btn-load-more" class="btn-order-primary" style="padding: 12px 32px; font-size: 0.92rem; background: var(--primary); color: #fff; border: 1.5px solid var(--secondary); box-shadow: 0 4px 16px rgba(26,67,41,0.25); cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+        <span class="material-symbols-outlined" style="font-size: 20px;">expand_more</span>
+        <span id="load-more-text">Load More Recipes</span>
+      </button>
+      <div id="recipe-count-indicator" style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted);">
+        Showing <span id="current-shown-count">16</span> of <span id="total-filtered-count">80</span> recipes
+      </div>
+    </div>
+  </main>
+
+  <!-- RECIPE METHOD MODAL -->
+  <div class="modal-backdrop" id="recipe-modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+      
+      <div style="width: 100%; height: 260px; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 20px; border: 1px solid var(--surface-border);">
+        <img src="" id="modal-img" alt="Recipe Dish" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+
+      <div class="modal-header-meta" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+        <span class="recipe-tag" id="modal-tag" style="position: static;"></span>
+        <span id="modal-meta" style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-hover);"></span>
+      </div>
+
+      <h2 class="recipe-title" id="modal-title" style="font-size: 1.75rem; margin-bottom: 12px; line-height: 1.25;"></h2>
+      <p id="modal-desc" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5;"></p>
+
+      <!-- Ingredients List -->
+      <div style="margin-bottom: 22px;">
+        <h3 id="modal-ingredients-header" style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--primary); margin-bottom: 10px; border-bottom: 1px solid var(--surface-border); padding-bottom: 4px;">
+          Ingredients Needed:
+        </h3>
+        <ul id="modal-ingredients-list" style="list-style: none; display: flex; flex-direction: column; gap: 7px; font-size: 0.9rem; color: var(--text-muted);"></ul>
+      </div>
+
+      <!-- Cooking Instructions -->
+      <div style="margin-bottom: 20px;">
+        <h3 id="modal-instructions-header" style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--primary); margin-bottom: 10px; border-bottom: 1px solid var(--surface-border); padding-bottom: 4px;">
+          Step-by-Step Cooking Method:
+        </h3>
+        <ol id="modal-instructions-list" style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: var(--text-main); line-height: 1.5;"></ol>
+      </div>
+
+      <!-- Chef's Tip Box -->
+      <div class="chef-tip-box" id="modal-tip-box">
+        <strong>✦ Chef's Botanical Tip: </strong>
+        <span id="modal-tip"></span>
+      </div>
+
+      <!-- Direct Order for this Recipe -->
+      <div style="margin-top: 24px; text-align: center;">
+        <a href="https://wa.me/919663152977" target="_blank" class="btn-whatsapp-order" id="modal-wa-btn">
+          <span class="material-symbols-outlined" style="font-size: 20px;">chat</span>
+          <span id="modal-wa-btn-text">Order Fresh Mushrooms for this Recipe</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="assets/logo.png" alt="Organic Anabe Logo" />
+        </div>
+        <div class="footer-title">Organic Anabe</div>
+        <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--secondary-light); margin-bottom: 10px;">
+          Nature Purity In Every Bite
+        </div>
+        <p class="footer-tagline">
+          Bringing artisanal forest nutrition and farm gate freshness directly to your kitchen.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Direct Helpline</h3>
+        <ul class="contact-list">
+          <li><a href="tel:9663152977" class="contact-item"><span class="material-symbols-outlined">call</span> 9663152977</a></li>
+          <li><a href="tel:7975210984" class="contact-item"><span class="material-symbols-outlined">call</span> 7975210984</a></li>
+          <li><a href="tel:9591185530" class="contact-item"><span class="material-symbols-outlined">call</span> 9591185530</a></li>
+          <li><a href="mailto:organicanabe@gmail.com" class="contact-item"><span class="material-symbols-outlined">mail</span> organicanabe@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Order Online</h3>
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+          <div class="qr-box-wrap">
+            <img src="assets/poster_qr_clean.png" alt="QR Code" class="qr-img" />
+          </div>
+          <a href="https://organabe.in" target="_blank" style="color: var(--secondary-fixed); font-weight: 700; font-size: 0.95rem; text-decoration: none; margin-top: 6px;">
+            organabe.in
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Organic Anabe (ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ). All Rights Reserved.</span>
+      <span>Karnataka, India</span>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE BOTTOM ORDER BAR -->
+  <aside class="mobile-bottom-bar" aria-label="Mobile Quick Actions">
+    <a href="tel:9663152977" class="mobile-bottom-call">
+      <span class="material-symbols-outlined" style="font-size: 20px;">call</span>
+      <span>Call Us</span>
+    </a>
+    <a href="https://wa.me/919663152977?text=Hello%20Organic%20Anabe!%20I%20would%20like%20to%20order%20fresh%20harvest%20mushrooms%20(@%20₹79/200g)." target="_blank" class="mobile-bottom-wa">
+      <span class="material-symbols-outlined" style="font-size: 20px; color: var(--secondary-light);">shopping_bag</span>
+      <span>Order on WhatsApp</span>
+      <span class="price-pill">₹79</span>
+    </a>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="js/recipes-data.js"></script>
+  <script src="js/recipes-page.js"></script>
+</body>
+</html>
+

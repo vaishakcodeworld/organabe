@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organic Anabe (ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ) | Fresh Gourmet Mushrooms</title>
+  <meta name="description" content="100% Farm-Fresh Organic Oyster and Milky Mushrooms cultivated chemical-free in Karnataka. Rich in protein, antioxidants and vitamins. Order online for daily doorstep delivery." />
+
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" rel="stylesheet" />
+
+  <!-- Three.js (r128) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-lang="en">
+
+  <!-- TOP ANNOUNCEMENT TICKER -->
+  <div class="top-ticker">
+    <div class="top-ticker-content">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary-light);">eco</span>
+        <span data-i18n="ticker_text">100% Farm Fresh Botanical Cultivation • No Chemicals</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <span class="hidden-mobile" data-i18n="ticker_harvest">Dawn Harvest (5:30 AM) • Active Ergothioneine & Beta-Glucans</span>
+        <span>•</span>
+        <a href="tel:9663152977" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 4px;">
+          <span class="material-symbols-outlined" style="font-size: 15px; color: var(--secondary-light);">call</span>
+          <span data-i18n="ticker_phone">Hotline: 9663152977</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION HEADER -->
+  <header class="site-header">
+    <div class="nav-container">
+      <!-- Brand & Logo -->
+      <a href="#home" class="brand-link">
+        <div class="brand-logo-wrap">
+          <img src="assets/logo.png" alt="Organic Anabe (ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ) Logo" id="site-logo" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-title" data-i18n="brand_name">Organic Anabe</span>
+          <span class="brand-subtitle" data-i18n="brand_sub">Nature Purity In Every Bite</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="active" data-i18n="nav_home">Home & 3D</a></li>
+          <li><a href="#benefits" data-i18n="nav_benefits">Health Benefits</a></li>
+          <li><a href="#products" data-i18n="nav_products">Mushrooms</a></li>
+          <li><a href="recipes.html" data-i18n="nav_recipes">Recipes (80+)</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact & Order</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Language & Order) -->
+      <div class="nav-actions">
+        <!-- Language Switcher Pill -->
+        <div class="lang-switch" role="group" aria-label="Language selection">
+          <button type="button" class="lang-btn active" id="lang-en-btn">EN</button>
+          <button type="button" class="lang-btn" id="lang-kn-btn">ಕನ್ನಡ</button>
+        </div>
+
+        <!-- WhatsApp Order CTA -->
+        <a href="https://wa.me/919663152977" target="_blank" class="btn-order-primary" id="wa-order-nav">
+          <span class="material-symbols-outlined" style="font-size: 18px; color: var(--secondary-light);">shopping_bag</span>
+          <span data-i18n="btn_order_nav">Order Online</span>
+          <span class="btn-order-price" data-i18n="btn_price_nav">₹79 / 200g</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="assets/logo.png" alt="Organic Anabe Logo" style="width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--secondary);" />
+        <div>
+          <span style="font-family: var(--font-serif); font-weight: 700; color: var(--primary); display: block; font-size: 1.05rem;">Organic Anabe</span>
+          <span style="font-size: 0.68rem; color: var(--secondary); font-weight: 600;">ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ</span>
+        </div>
+      </div>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <ul class="mobile-drawer-links">
+      <li><a href="#home" class="mobile-nav-link"><span class="material-symbols-outlined">view_in_ar</span> <span data-i18n="nav_home">Home & 3D</span></a></li>
+      <li><a href="#benefits" class="mobile-nav-link"><span class="material-symbols-outlined">health_and_safety</span> <span data-i18n="nav_benefits">Health Benefits</span></a></li>
+      <li><a href="#products" class="mobile-nav-link"><span class="material-symbols-outlined">psychiatry</span> <span data-i18n="nav_products">Mushrooms</span></a></li>
+      <li><a href="recipes.html" class="mobile-nav-link" style="background: rgba(197, 160, 89, 0.15); color: var(--primary);"><span class="material-symbols-outlined" style="color: var(--secondary);">menu_book</span> <span data-i18n="nav_recipes">Recipes (80+ Vault)</span></a></li>
+      <li><a href="#contact" class="mobile-nav-link"><span class="material-symbols-outlined">contact_phone</span> <span data-i18n="nav_contact">Contact & Helpline</span></a></li>
+    </ul>
+    <div class="mobile-drawer-cta">
+      <a href="https://wa.me/919663152977?text=Hello%20Organic%20Anabe!%20I%20would%20like%20to%20order%20Fresh%20Harvest%20Mushrooms%20(@%20₹79/200g)." target="_blank" class="mobile-bottom-wa" style="text-align: center; justify-content: center;">
+        <span class="material-symbols-outlined">chat</span>
+        <span>Order on WhatsApp</span>
+        <span class="price-pill">₹79</span>
+      </a>
+      <a href="tel:9663152977" class="btn-stitch-modal" style="justify-content: center; padding: 10px;">
+        <span class="material-symbols-outlined">call</span>
+        <span>Call Helpline: 9663152977</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT WRAPPER -->
+  <main>
+    <!-- 3D CINEMATIC SCROLL-BASED HERO SECTION -->
+    <section class="hero-scroll-track" id="home">
+      <div class="hero-sticky-frame" id="hero-sticky-frame">
+        <!-- Background Canvas (120-frame high-resolution time-lapse) -->
+        <canvas id="hero-scroll-canvas" class="hero-scroll-canvas"></canvas>
+
+        <!-- Vignette & Edge Blending Overlays -->
+        <div class="hero-vignette-overlay"></div>
+        <div class="hero-bottom-gradient"></div>
+
+        <!-- Floating HUD / Control Bar -->
+        <div class="scrolly-hud">
+          <button type="button" id="btn-hero-autoplay" class="btn-scrolly-autoplay" aria-label="Toggle auto play">
+            <span class="material-symbols-outlined" id="hero-autoplay-icon" style="font-size: 18px; color: var(--secondary);">play_arrow</span>
+            <span id="hero-autoplay-text" data-i18n="scroll_btn_autoplay">▶ Auto Play</span>
+          </button>
+          <div class="scrolly-needle-track" title="Harvest Progress">
+            <div class="scrolly-needle-fill" id="hero-progress-bar"></div>
+          </div>
+          <span class="scrolly-needle-pct" id="hero-progress-pct">0%</span>
+        </div>
+
+        <!-- STAGE 1: Sacred Earth & Awakening Spores (0% - 22%) -->
+        <div class="scrolly-stage stage-active" id="scrolly-stage-1">
+          <div class="scrolly-glass-card">
+            <div class="botanical-badge" style="margin-bottom: 12px;">
+              <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary);">spa</span>
+              <span data-i18n="scroll_stage_1_badge">Stage 1: Sacred Earth • 100% Organic Sprout</span>
+            </div>
+            <h1 class="scrolly-title" data-i18n="scroll_stage_1_title">
+              Nature’s Living Gold: Awakening From Sacred Earth
+            </h1>
+            <p class="scrolly-desc" data-i18n="scroll_stage_1_desc">
+              Watch pure mycelium awaken from sterilized paddy straw, ragi husk & mountain spring mist. Zero chemicals or artificial boosters.
+            </p>
+            <div class="scroll-prompt-pill">
+              <span class="material-symbols-outlined" style="font-size: 16px;">south</span>
+              <span data-i18n="scroll_prompt">Scroll to witness the living harvest ↓</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: Botanical Bloom & Dual Cultivars (24% - 54%) -->
+        <div class="scrolly-stage" id="scrolly-stage-2">
+          <div class="scrolly-dual-wrap">
+            <div class="scrolly-dual-header">
+              <div class="botanical-badge">
+                <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary);">auto_awesome</span>
+                <span data-i18n="scroll_stage_2_badge">Stage 2: Botanical Splendor • Oyster & Milky Bloom</span>
+              </div>
+              <h2 class="scrolly-title" style="font-size: clamp(1.6rem, 3vw, 2.4rem); margin: 8px 0;" data-i18n="scroll_stage_2_title">
+                Two Royal Cultivars Emerging in Synchrony
+              </h2>
+            </div>
+            <div class="scrolly-cultivars-grid">
+              <div class="scrolly-cultivar-box">
+                <h3 data-i18n="scroll_stage_2_oyster_title">
+                  <span class="material-symbols-outlined" style="color: var(--secondary);">eco</span>
+                  Oyster Mushroom (Pleurotus Ostreatus)
+                </h3>
+                <p data-i18n="scroll_stage_2_oyster_desc">
+                  Fan-shaped velvety fluted petals rich in Lovastatin, Ergothioneine & soluble dietary fiber. Cooks with natural umami richness.
+                </p>
+              </div>
+              <div class="scrolly-cultivar-box">
+                <h3 data-i18n="scroll_stage_2_milky_title">
+                  <span class="material-symbols-outlined" style="color: var(--secondary-light);">psychiatry</span>
+                  Milky Mushroom (Calocybe Indica)
+                </h3>
+                <p data-i18n="scroll_stage_2_milky_desc">
+                  Plump porcelain alabaster caps with dense plant protein and a firm, succulent culinary bite that holds beautifully in tandoors and curries.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3: Dawn Maturation & Lab Certified Purity (56% - 80%) -->
+        <div class="scrolly-stage" id="scrolly-stage-3">
+          <div class="scrolly-glass-card" style="max-width: 900px;">
+            <div class="botanical-badge" style="margin-bottom: 12px;">
+              <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary);">wb_twilight</span>
+              <span data-i18n="scroll_stage_3_badge">Stage 3: Dawn Maturation • 5:30 AM Peak Potency</span>
+            </div>
+            <h2 class="scrolly-title" style="font-size: clamp(1.8rem, 3.2vw, 2.6rem);" data-i18n="scroll_stage_3_title">
+              Pristine Organic Vitality at Peak Spore Release
+            </h2>
+            <div class="scrolly-metrics-grid">
+              <div class="scrolly-metric-pill">
+                <span class="material-symbols-outlined">water_drop</span>
+                <span data-i18n="scroll_stage_3_stat1">Moisture: 88.4% • Density Grade A++</span>
+              </div>
+              <div class="scrolly-metric-pill">
+                <span class="material-symbols-outlined">verified_user</span>
+                <span data-i18n="scroll_stage_3_stat2">100% Residue & Chemical Free Substrate</span>
+              </div>
+              <div class="scrolly-metric-pill">
+                <span class="material-symbols-outlined">local_shipping</span>
+                <span data-i18n="scroll_stage_3_stat3">Direct Farm Supply Across Karnataka</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 4: Hand Harvest & Instant Kitchen Order (82% - 100%) -->
+        <div class="scrolly-stage" id="scrolly-stage-4">
+          <div class="scrolly-harvest-layout">
+            <div class="scrolly-harvest-narrative">
+              <div class="botanical-badge" style="margin-bottom: 10px;">
+                <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary);">volunteer_activism</span>
+                <span data-i18n="scroll_stage_4_badge">Stage 4: Hand-Picked Harvest • From Earth to Kitchen</span>
+              </div>
+              <h2 style="font-family: var(--font-serif); font-size: clamp(1.7rem, 2.8vw, 2.3rem); line-height: 1.25; margin-bottom: 12px; color: #fff;" data-i18n="scroll_stage_4_title">
+                Gently Hand-Picked at Dawn for Your Family Table
+              </h2>
+              <p style="font-size: 0.95rem; line-height: 1.6; color: rgba(255,255,255,0.9); margin-bottom: 20px;" data-i18n="scroll_stage_4_desc">
+                Direct farm-gate supply delivered within hours across Bengaluru and Karnataka. Sealed in sterile 200g punnet packs for gourmet cooking.
+              </p>
+              <div>
+                <a href="recipes.html" class="btn-order-primary" style="font-size: 0.85rem; padding: 10px 22px; background: var(--secondary-fixed); color: var(--tertiary-dark); border: 2px solid var(--secondary);">
+                  <span class="material-symbols-outlined" style="font-size: 18px;">menu_book</span>
+                  <span>Explore 80+ Recipe Collection →</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Purchase Card -->
+            <div class="quick-order-card" style="width: 360px; max-width: 100%; box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+              <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--secondary-fixed); margin-bottom: 4px;" data-i18n="order_card_tag">
+                Direct Farm Purchase
+              </div>
+              <h3 class="quick-order-title" data-i18n="order_card_title">Fresh Daily Harvest Pack</h3>
+              <p class="quick-order-desc" data-i18n="order_card_desc">
+                100% untouched sterile punnet pack. Ready for gourmet roasts, curries or immunity broths.
+              </p>
+
+              <!-- Price Ledger -->
+              <div class="price-box">
+                <div>
+                  <div style="font-size: 0.68rem; text-transform: uppercase; color: rgba(255,255,255,0.7);" data-i18n="label_mrp">Standard MRP</div>
+                  <div class="mrp-strike">₹99</div>
+                </div>
+                <div style="text-align: right;">
+                  <div style="font-size: 0.68rem; text-transform: uppercase; color: var(--secondary-fixed);" data-i18n="label_offer">Offer Price</div>
+                  <div>
+                    <span class="offer-price">₹79</span>
+                    <span style="font-size: 0.76rem; color: rgba(255,255,255,0.85);" data-i18n="label_weight">/ 200g</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quantity Stepper -->
+              <div class="qty-control">
+                <span style="font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.9);" data-i18n="label_quantity">Quantity:</span>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <button type="button" class="qty-btn" id="qty-minus" aria-label="Decrease quantity">-</button>
+                  <span class="qty-number" id="qty-count">1</span>
+                  <button type="button" class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
+                </div>
+              </div>
+
+              <!-- Instant WhatsApp Button -->
+              <a href="https://wa.me/919663152977" target="_blank" class="btn-whatsapp-order" id="wa-order-hero">
+                <span class="material-symbols-outlined" style="font-size: 19px;">chat</span>
+                <span data-i18n="btn_whatsapp_cta">Instant WhatsApp Order</span>
+              </a>
+
+              <div style="text-align: center; margin-top: 10px; font-size: 0.72rem; color: rgba(255,255,255,0.8); display: flex; align-items: center; justify-content: center; gap: 4px;">
+                <span class="material-symbols-outlined" style="font-size: 14px; color: var(--secondary-fixed);">verified_user</span>
+                <span data-i18n="guarantee_text">100% Farm Fresh Guarantee</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-flourish">❦ ✦ ❦</div>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- HEALTH BENEFITS SECTION (REPLICATING THE POSTER) -->
+    <section class="benefits-section" id="benefits">
+      <div class="section-header-center">
+        <div class="botanical-badge">
+          <span data-i18n="benefits_badge">Nutritional Authority • Verified Potency</span>
+        </div>
+        <h2 class="section-title" data-i18n="benefits_title">Health Benefits</h2>
+        <div>
+          <span class="classic-ribbon" data-i18n="benefits_ribbon">Pure Nutrition • Better Health • Naturally</span>
+        </div>
+        <p style="font-size: 0.95rem; color: var(--text-muted); max-width: 720px; margin: 0 auto;" data-i18n="benefits_intro">
+          Revered in Ayurvedic traditions and validated by contemporary nutritional science, our unbleached farm-fresh mushrooms supply active bio-compounds for lifelong vitality.
+        </p>
+      </div>
+
+      <!-- 4 Pillars Matching The Poster Layout -->
+      <div class="benefits-grid">
+        <!-- 1. Protein & Fiber -->
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <span class="material-symbols-outlined" style="font-size: 34px;">fitness_center</span>
+          </div>
+          <h3 class="benefit-title" data-i18n="benefit_1_title">Rich in Protein & Fiber</h3>
+          <p class="benefit-desc" data-i18n="benefit_1_desc">
+            Provides clean plant protein with complete amino acid profile to fuel lean muscle growth while high soluble fibers keep you satiated longer.
+          </p>
+        </div>
+
+        <!-- 2. Antioxidants -->
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <span class="material-symbols-outlined" style="font-size: 34px;">shield</span>
+          </div>
+          <h3 class="benefit-title" data-i18n="benefit_2_title">Strong Antioxidants</h3>
+          <p class="benefit-desc" data-i18n="benefit_2_desc">
+            Packed with Ergothioneine and Polyphenols that actively scavenge harmful free radicals, defending cellular DNA against premature oxidative stress.
+          </p>
+        </div>
+
+        <!-- 3. Immune Support -->
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <span class="material-symbols-outlined" style="font-size: 34px;">ecg_heart</span>
+          </div>
+          <h3 class="benefit-title" data-i18n="benefit_3_title">Supports Immune System</h3>
+          <p class="benefit-desc" data-i18n="benefit_3_desc">
+            High concentration of active Beta-Glucans stimulates natural killer (NK) cells and macrophages, creating a resilient shield against seasonal infections.
+          </p>
+        </div>
+
+        <!-- 4. Natural Vitamins -->
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <span class="material-symbols-outlined" style="font-size: 34px;">vital_signs</span>
+          </div>
+          <h3 class="benefit-title" data-i18n="benefit_4_title">Natural Source of Vitamins</h3>
+          <p class="benefit-desc" data-i18n="benefit_4_desc">
+            Nature's rare whole-food source of bioavailable Vitamin D, Vitamin B-complex (Riboflavin, Niacin, Folate) and essential trace minerals like Selenium & Potassium.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-flourish">❦ ✦ ❦</div>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- PREMIUM QUALITY MUSHROOMS PRODUCT SHOWCASE -->
+    <section class="products-section" id="products">
+      <div class="section-header-center">
+        <div class="botanical-badge">
+          <span data-i18n="products_badge">Artisanal Cultivation</span>
+        </div>
+        <h2 class="section-title" data-i18n="products_title">Premium Quality Mushrooms</h2>
+        <p style="font-size: 0.95rem; color: var(--text-muted);" data-i18n="products_subtitle">
+          Carefully grown under climate-controlled pure mist chambers with zero artificial intervention.
+        </p>
+      </div>
+
+      <!-- 2 Mushroom Cards Flanking Central 100% Fresh Rosette Badge -->
+      <div class="products-grid">
+        <!-- Oyster Mushroom Card -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/poster_oyster_card.jpg" alt="Organic Oyster Mushroom (Pleurotus Ostreatus)" />
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+            <h3 class="product-title" data-i18n="oyster_name">Oyster Mushroom</h3>
+            <span style="font-size: 0.76rem; font-style: italic; color: var(--text-gold);" data-i18n="oyster_sci">Pleurotus Ostreatus</span>
+          </div>
+          <p class="product-desc" data-i18n="oyster_desc">
+            Exquisite fan-shaped fluted petals with a tender, velvety texture and delicate earthy umami flavor. Cooks quickly; absorbs aromatic spices beautifully.
+          </p>
+
+          <!-- Ledger -->
+          <div class="product-ledger">
+            <div class="ledger-col">
+              <span class="ledger-label">MRP</span>
+              <span class="ledger-value strike">₹99</span>
+            </div>
+            <div class="ledger-col">
+              <span class="ledger-label" style="color: var(--secondary-hover);">Offer Price</span>
+              <span class="ledger-value" style="color: var(--primary);">₹79</span>
+            </div>
+            <div class="ledger-col">
+              <span class="ledger-label">Weight</span>
+              <span class="ledger-value">200g</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/919663152977" target="_blank" class="btn-order-primary" id="order-oyster-card-btn" style="justify-content: center; width: 100%;">
+            <span class="material-symbols-outlined" style="font-size: 18px;">shopping_cart</span>
+            <span data-i18n="oyster_btn_add">Order Oyster Pack</span>
+          </a>
+        </div>
+
+        <!-- Center Rosette Seal -->
+        <div class="seal-center-badge">
+          <img src="assets/poster_seal_clean.png" alt="100% Natural & Fresh Seal" class="seal-img" />
+          <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--secondary-hover); margin-top: 8px;" data-i18n="badge_fresh_seal">
+            100% Natural & Fresh
+          </span>
+        </div>
+
+        <!-- Milky Mushroom Card -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="assets/poster_milky_card.jpg" alt="Organic Milky Mushroom (Calocybe Indica)" />
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+            <h3 class="product-title" data-i18n="milky_name">Milky Mushroom</h3>
+            <span style="font-size: 0.76rem; font-style: italic; color: var(--text-gold);" data-i18n="milky_sci">Calocybe Indica</span>
+          </div>
+          <p class="product-desc" data-i18n="milky_desc">
+            Stately porcelain-white mushroom with thick, succulent stems and firm meaty texture. Retains crisp bite in curries, biryanis, and tandoori roasts.
+          </p>
+
+          <!-- Ledger -->
+          <div class="product-ledger">
+            <div class="ledger-col">
+              <span class="ledger-label">MRP</span>
+              <span class="ledger-value strike">₹99</span>
+            </div>
+            <div class="ledger-col">
+              <span class="ledger-label" style="color: var(--secondary-hover);">Offer Price</span>
+              <span class="ledger-value" style="color: var(--primary);">₹79</span>
+            </div>
+            <div class="ledger-col">
+              <span class="ledger-label">Weight</span>
+              <span class="ledger-value">200g</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/919663152977" target="_blank" class="btn-order-primary" id="order-milky-card-btn" style="justify-content: center; width: 100%;">
+            <span class="material-symbols-outlined" style="font-size: 18px;">shopping_cart</span>
+            <span data-i18n="milky_btn_add">Order Milky Pack</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOURMET RECIPES SHOWCASE -->
+    <section class="recipes-section" id="recipes">
+      <div class="section-header-center">
+        <div class="botanical-badge">
+          <span data-i18n="recipes_badge">Farm to Fork Cuisine</span>
+        </div>
+        <h2 class="section-title" data-i18n="recipes_title">Culinary Recipes Showcase</h2>
+        <p style="font-size: 0.95rem; color: var(--text-muted);" data-i18n="recipes_subtitle">
+          Unlock the gastronomic versatility of organic mushrooms with authentic regional and contemporary preparations.
+        </p>
+        <div style="margin-top: 20px;">
+          <a href="recipes.html" class="btn-order-primary" style="font-size: 0.88rem; padding: 10px 24px; background: var(--secondary-fixed); color: var(--tertiary-dark); border: 2px solid var(--secondary); box-shadow: 0 4px 14px rgba(0,0,0,0.12);">
+            <span class="material-symbols-outlined" style="font-size: 20px;">menu_book</span>
+            <span data-i18n="btn_explore_all_recipes">Explore Complete Recipe Collection (80+ Dishes) →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="recipe-tabs">
+        <button type="button" class="recipe-tab-btn active" data-filter="all" data-i18n="tab_all">All Recipes</button>
+        <button type="button" class="recipe-tab-btn" data-filter="oyster" data-i18n="tab_oyster">Oyster Specials</button>
+        <button type="button" class="recipe-tab-btn" data-filter="milky" data-i18n="tab_milky">Milky Specials</button>
+      </div>
+
+      <!-- Recipe Cards Grid (Stitch Luxury Layout) -->
+      <div class="recipes-grid">
+        <!-- Recipe 1: Coastal Oyster Sukka -->
+        <article class="recipe-card-stitch" data-category="oyster">
+          <div class="stitch-img-wrap">
+            <img src="assets/recipe_oyster_sukka.jpg" alt="Coastal Oyster Mushroom Sukka" loading="lazy" />
+            <div class="stitch-badge-top" data-i18n="recipe_1_tag">Oyster • Karnataka Coastal</div>
+            <div class="stitch-time-pill">
+              <span class="material-symbols-outlined" style="font-size: 14px; color: var(--secondary);">timer</span>
+              <span>20 Mins • 165 kcal</span>
+            </div>
+          </div>
+          <div class="stitch-body">
+            <div class="stitch-header-row">
+              <div style="flex: 1;">
+                <h3 class="stitch-title-en" data-i18n="recipe_1_title">Coastal Oyster Mushroom Sukka</h3>
+                <span class="stitch-title-kn">ಕರಾವಳಿ ಸಿಂಪಿ ಅಣಬೆ ಸುಕ್ಕ</span>
+              </div>
+              <div class="stitch-serves-pill">
+                <span class="stitch-serves-label">Serves</span>
+                <span class="stitch-serves-val">3-4</span>
+              </div>
+            </div>
+            <p class="stitch-desc" data-i18n="recipe_1_desc">
+              Tender shredded oyster mushrooms dry-roasted in freshly ground byadgi chillies, roasted coconut, and fragrant curry leaves.
+            </p>
+            <div class="stitch-botanical-box">
+              <div class="stitch-botanical-top">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <span class="material-symbols-outlined" style="font-size: 17px; color: var(--secondary);">menu_book</span>
+                  Key Botanical Ingredients
+                </span>
+                <span class="stitch-botanical-badge">Heritage Prep</span>
+              </div>
+              <ul class="stitch-ing-grid">
+                <li>200g Fresh Oyster Mushrooms</li>
+                <li>1/2 cup Freshly grated coconut</li>
+                <li>4-5 Roasted Byadgi chillies</li>
+                <li>Coriander, cumin & fennel</li>
+                <li>Fresh curry leaves & onion</li>
+                <li>Cold-pressed coconut oil / ghee</li>
+              </ul>
+              <button type="button" class="stitch-step-toggle" onclick="toggleRecipeAccordion('home-step-1', this)" aria-expanded="false">
+                <span>View Step-by-Step Technique</span>
+                <span class="material-symbols-outlined stitch-step-chevron">expand_more</span>
+              </button>
+              <div class="stitch-steps-content" id="home-step-1">
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 1:</span>
+                  <span>Dry roast whole spices & chillies; coarsely grind with grated coconut.</span>
+                </div>
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 2:</span>
+                  <span>Sauté curry leaves and onions in coconut oil until translucent golden.</span>
+                </div>
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 3:</span>
+                  <span>Add shredded oyster mushrooms; cook on high heat 4 mins as moisture evaporates.</span>
+                </div>
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 4:</span>
+                  <span>Toss with coarse spiced coconut mixture and finish with fresh lime.</span>
+                </div>
+              </div>
+            </div>
+            <div class="stitch-footer-strip">
+              <div class="stitch-compound-badge">
+                <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary);">eco</span>
+                <span>✦ Rich in Ergothioneine</span>
+              </div>
+              <div class="stitch-actions-row">
+                <button type="button" class="btn-stitch-modal" onclick="openRecipeModal('recipe_1')">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
+                  <span>Full Recipe</span>
+                </button>
+                <a href="https://wa.me/919663152977?text=Hello%20Organic%20Anabe!%20I%20would%20like%20to%20order%201%20pack%20(200g%20@%20₹79)%20for%20Oyster%20Sukka." target="_blank" class="btn-stitch-wa">
+                  <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary-light);">chat</span>
+                  <span>Order Pack ₹79</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Recipe 2: Smoky Charcoal Milky Seekh Kebab (Featured Kebab) -->
+        <article class="recipe-card-stitch" data-category="milky">
+          <div class="stitch-img-wrap">
+            <img src="assets/recipe_kebab.jpg" alt="Smoky Charcoal Milky Mushroom Seekh Kebab" loading="lazy" />
+            <div class="stitch-badge-top" style="background: rgba(119, 90, 25, 0.95); color: #fff;">Milky • Tandoori Kebab (New!)</div>
+            <div class="stitch-time-pill">
+              <span class="material-symbols-outlined" style="font-size: 14px; color: var(--secondary);">timer</span>
+              <span>28 Mins • 190 kcal</span>
+            </div>
+          </div>
+          <div class="stitch-body">
+            <div class="stitch-header-row">
+              <div style="flex: 1;">
+                <h3 class="stitch-title-en">Smoky Charcoal Milky Seekh Kebab</h3>
+                <span class="stitch-title-kn">ಸ್ಮೋಕಿ ಹಾಲು ಅಣಬೆ ಸೀಖ್ ಕಬಾಬ್</span>
+              </div>
+              <div class="stitch-serves-pill">
+                <span class="stitch-serves-label">Serves</span>
+                <span class="stitch-serves-val">4</span>
+              </div>
+            </div>
+            <p class="stitch-desc">
+              Minced meaty milky mushrooms blended with soft cottage paneer, crushed coriander seeds, mint, and green chillies skewered and flame-grilled.
+            </p>
+            <div class="stitch-botanical-box">
+              <div class="stitch-botanical-top">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <span class="material-symbols-outlined" style="font-size: 17px; color: var(--secondary);">menu_book</span>
+                  Key Botanical Ingredients
+                </span>
+                <span class="stitch-botanical-badge">Tandoor Special</span>
+              </div>
+              <ul class="stitch-ing-grid">
+                <li>250g Fresh Milky Mushrooms</li>
+                <li>100g Grated soft Malai Paneer</li>
+                <li>2 tbsp Roasted Gram flour (Besan)</li>
+                <li>Crushed Coriander & Cumin seeds</li>
+                <li>Fresh mint & green chillies</li>
+                <li>Pure cow butter for basting</li>
+              </ul>
+              <button type="button" class="stitch-step-toggle" onclick="toggleRecipeAccordion('home-step-2', this)" aria-expanded="false">
+                <span>View Step-by-Step Technique</span>
+                <span class="material-symbols-outlined stitch-step-chevron">expand_more</span>
+              </button>
+              <div class="stitch-steps-content" id="home-step-2">
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 1:</span>
+                  <span>Coarsely mince steamed milky mushrooms and squeeze excess moisture.</span>
+                </div>
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 2:</span>
+                  <span>Knead with grated paneer, roasted besan, crushed spices, and fresh herbs into dough.</span>
+                </div>
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 3:</span>
+                  <span>Press onto skewers and sear over smoking grill pan or tawa, basting with butter.</span>
+                </div>
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 4:</span>
+                  <span>Slide off skewers, dust with tangy chaat masala, and serve with onion rings!</span>
+                </div>
+              </div>
+            </div>
+            <div class="stitch-footer-strip">
+              <div class="stitch-compound-badge">
+                <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary);">eco</span>
+                <span>✦ 17.5% Dense Protein</span>
+              </div>
+              <div class="stitch-actions-row">
+                <a href="recipes.html" class="btn-stitch-modal">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
+                  <span>All Kebabs</span>
+                </a>
+                <a href="https://wa.me/919663152977?text=Hello%20Organic%20Anabe!%20I%20would%20like%20to%20order%20Fresh%20Milky%20Mushrooms%20for%20making%20Seekh%20Kebabs%20(@%20₹79/200g)." target="_blank" class="btn-stitch-wa">
+                  <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary-light);">chat</span>
+                  <span>Order Pack ₹79</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Recipe 3: Dum Pukht Milky Biryani -->
+        <article class="recipe-card-stitch" data-category="milky">
+          <div class="stitch-img-wrap">
+            <img src="assets/recipe_milky_biryani.jpg" alt="Royal Milky Mushroom Dum Biryani" loading="lazy" />
+            <div class="stitch-badge-top" data-i18n="recipe_3_tag">Milky • Royal Feast</div>
+            <div class="stitch-time-pill">
+              <span class="material-symbols-outlined" style="font-size: 14px; color: var(--secondary);">timer</span>
+              <span>45 Mins • 280 kcal</span>
+            </div>
+          </div>
+          <div class="stitch-body">
+            <div class="stitch-header-row">
+              <div style="flex: 1;">
+                <h3 class="stitch-title-en" data-i18n="recipe_3_title">Dum Pukht Milky Mushroom Biryani</h3>
+                <span class="stitch-title-kn">ಹಾಲು ಅಣಬೆ ದಮ್ ಬಿರಿಯಾನಿ</span>
+              </div>
+              <div class="stitch-serves-pill">
+                <span class="stitch-serves-label">Serves</span>
+                <span class="stitch-serves-val">4-5</span>
+              </div>
+            </div>
+            <p class="stitch-desc" data-i18n="recipe_3_desc">
+              Layered saffron basmati rice and thick, juicy chunks of milky mushrooms slow-cooked in a clay pot with mint, caramelized onions, and spices.
+            </p>
+            <div class="stitch-botanical-box">
+              <div class="stitch-botanical-top">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <span class="material-symbols-outlined" style="font-size: 17px; color: var(--secondary);">menu_book</span>
+                  Key Botanical Ingredients
+                </span>
+                <span class="stitch-botanical-badge">Royal Dum</span>
+              </div>
+              <ul class="stitch-ing-grid">
+                <li>300g Fresh Milky Mushrooms</li>
+                <li>2 cups Aged Basmati rice</li>
+                <li>Saffron milk & caramelized onions</li>
+                <li>1 cup Hung curd + ginger garlic</li>
+                <li>Fresh mint sprigs & cow ghee</li>
+                <li>Shahi whole garam masala</li>
+              </ul>
+              <button type="button" class="stitch-step-toggle" onclick="toggleRecipeAccordion('home-step-3', this)" aria-expanded="false">
+                <span>View Step-by-Step Technique</span>
+                <span class="material-symbols-outlined stitch-step-chevron">expand_more</span>
+              </button>
+              <div class="stitch-steps-content" id="home-step-3">
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 1:</span>
+                  <span>Blanch sliced milky mushrooms in warm turmeric water for 2 mins; drain well.</span>
+                </div>
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 2:</span>
+                  <span>Marinate in spiced hung curd, mint, and ginger-garlic paste for 30 minutes.</span>
+                </div>
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 3:</span>
+                  <span>Par-boil fragrant basmati rice with whole spices to 70%.</span>
+                </div>
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 4:</span>
+                  <span>Layer mushrooms and rice in handi, top with saffron ghee, seal and dum-cook for 22 mins.</span>
+                </div>
+              </div>
+            </div>
+            <div class="stitch-footer-strip">
+              <div class="stitch-compound-badge">
+                <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary);">eco</span>
+                <span>✦ Active Polysaccharides</span>
+              </div>
+              <div class="stitch-actions-row">
+                <button type="button" class="btn-stitch-modal" onclick="openRecipeModal('recipe_3')">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
+                  <span>Full Recipe</span>
+                </button>
+                <a href="https://wa.me/919663152977?text=Hello%20Organic%20Anabe!%20I%20would%20like%20to%20order%20Fresh%20Milky%20Mushrooms%20for%20Dum%20Biryani%20(@%20₹79/200g)." target="_blank" class="btn-stitch-wa">
+                  <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary-light);">chat</span>
+                  <span>Order Pack ₹79</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Recipe 4: Pan-Seared Garlic Thyme Oyster -->
+        <article class="recipe-card-stitch" data-category="oyster">
+          <div class="stitch-img-wrap">
+            <img src="assets/recipe_oyster_garlic.jpg" alt="Pan-Seared Garlic Thyme Oyster Mushrooms" loading="lazy" />
+            <div class="stitch-badge-top" data-i18n="recipe_2_tag">Oyster • Continental</div>
+            <div class="stitch-time-pill">
+              <span class="material-symbols-outlined" style="font-size: 14px; color: var(--secondary);">timer</span>
+              <span>12 Mins • 140 kcal</span>
+            </div>
+          </div>
+          <div class="stitch-body">
+            <div class="stitch-header-row">
+              <div style="flex: 1;">
+                <h3 class="stitch-title-en" data-i18n="recipe_2_title">Pan-Seared Garlic Thyme Oyster</h3>
+                <span class="stitch-title-kn">ಗಾರ್ಲಿಕ್ ಬಟರ್ ಸಿಂಪಿ ಅಣಬೆ ರೋಸ್ಟ್</span>
+              </div>
+              <div class="stitch-serves-pill">
+                <span class="stitch-serves-label">Serves</span>
+                <span class="stitch-serves-val">2-3</span>
+              </div>
+            </div>
+            <p class="stitch-desc" data-i18n="recipe_2_desc">
+              Flash-seared in golden cold-pressed butter or olive oil with crushed malabar peppercorns, fresh green thyme, and toasted garlic cloves.
+            </p>
+            <div class="stitch-botanical-box">
+              <div class="stitch-botanical-top">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <span class="material-symbols-outlined" style="font-size: 17px; color: var(--secondary);">menu_book</span>
+                  Key Botanical Ingredients
+                </span>
+                <span class="stitch-botanical-badge">Gourmet Skillet</span>
+              </div>
+              <ul class="stitch-ing-grid">
+                <li>200g Fresh Oyster Mushroom clusters</li>
+                <li>2 tbsp Pure Cow Butter / Olive oil</li>
+                <li>6-8 Crushed garlic cloves</li>
+                <li>Fresh garden thyme sprigs</li>
+                <li>Coarse Malabar black pepper</li>
+                <li>Flaky sea salt & lemon zest</li>
+              </ul>
+              <button type="button" class="stitch-step-toggle" onclick="toggleRecipeAccordion('home-step-4', this)" aria-expanded="false">
+                <span>View Step-by-Step Technique</span>
+                <span class="material-symbols-outlined stitch-step-chevron">expand_more</span>
+              </button>
+              <div class="stitch-steps-content" id="home-step-4">
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 1:</span>
+                  <span>Separate oyster mushrooms into natural fan clusters without cutting.</span>
+                </div>
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 2:</span>
+                  <span>Sear dry on a sizzling heavy skillet for 2 minutes to concentrate flavor.</span>
+                </div>
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 3:</span>
+                  <span>Add butter and crushed garlic; baste as the edges turn golden crisp.</span>
+                </div>
+                <div class="stitch-step-item">
+                  <span class="stitch-step-num">Step 4:</span>
+                  <span>Toss with fresh thyme sprigs and freshly cracked black peppercorns.</span>
+                </div>
+              </div>
+            </div>
+            <div class="stitch-footer-strip">
+              <div class="stitch-compound-badge">
+                <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary);">eco</span>
+                <span>✦ Natural Lovastatin</span>
+              </div>
+              <div class="stitch-actions-row">
+                <button type="button" class="btn-stitch-modal" onclick="openRecipeModal('recipe_2')">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
+                  <span>Full Recipe</span>
+                </button>
+                <a href="https://wa.me/919663152977?text=Hello%20Organic%20Anabe!%20I%20would%20like%20to%20order%20Fresh%20Oyster%20Mushrooms%20for%20Garlic%20Butter%20Roast%20(@%20₹79/200g)." target="_blank" class="btn-stitch-wa">
+                  <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary-light);">chat</span>
+                  <span>Order Pack ₹79</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Full Recipe Vault Banner -->
+      <div style="max-width: 1100px; margin: 40px auto 0; background: linear-gradient(135deg, #1a4329 0%, #0d2818 100%); border: 2px solid var(--secondary); border-radius: var(--radius-xl); padding: 36px 30px; text-align: center; color: #fff; box-shadow: var(--shadow-lg);">
+        <div class="botanical-badge" style="background: rgba(255,255,255,0.12); color: var(--secondary-light); border-color: var(--secondary); margin-bottom: 12px;">
+          <span class="material-symbols-outlined" style="font-size: 16px;">auto_stories</span>
+          <span>80+ Curated Dishes (40 Each) • 80+ ವಿಶೇಷ ಅಡುಗೆಗಳು</span>
+        </div>
+        <h3 style="font-family: var(--font-serif); font-size: clamp(1.4rem, 2.5vw, 1.85rem); margin: 6px 0 10px; color: var(--secondary-fixed);" data-i18n="vault_banner_title">
+          80+ Artisanal Farm Recipes Await You
+        </h3>
+        <p style="font-size: 0.92rem; max-width: 720px; margin: 0 auto 24px; color: rgba(255,255,255,0.85); line-height: 1.5;" data-i18n="vault_banner_desc">
+          From coastal sukkas and charcoal tandoori kebabs to royal dum biryanis and healing immunity broths, explore our full library of 80 gourmet preparations (40 Oyster + 40 Milky).
+        </p>
+        <a href="recipes.html" class="btn-order-primary" style="font-size: 0.92rem; padding: 12px 30px; background: var(--secondary-fixed); color: var(--tertiary-dark); border: 2px solid #ffffff; box-shadow: 0 4px 16px rgba(0,0,0,0.3);">
+          <span class="material-symbols-outlined" style="font-size: 20px;">menu_book</span>
+          <span data-i18n="btn_explore_all_recipes">Explore Complete Recipe Collection (80+ Dishes) →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CULTIVATION QUALITY SECTION -->
+    <section class="benefits-section" style="background: var(--bg-parchment);">
+      <div class="section-header-center">
+        <div class="botanical-badge">
+          <span data-i18n="cultivation_badge">Botanical Standards</span>
+        </div>
+        <h2 class="section-title" data-i18n="cultivation_title">Our Sustainable Cultivation Ritual</h2>
+      </div>
+
+      <div class="cultivation-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap" style="background: var(--secondary-hover);">
+            <span class="material-symbols-outlined" style="font-size: 32px; color: #fff;">agriculture</span>
+          </div>
+          <h3 class="benefit-title" data-i18n="step1_title">Paddy & Ragi Substrate</h3>
+          <p class="benefit-desc" data-i18n="step1_desc">
+            Locally sourced, autoclaved sterilized agricultural husks provide the cleanest natural nutrition for mycelial colonization.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap" style="background: var(--secondary-hover);">
+            <span class="material-symbols-outlined" style="font-size: 32px; color: #fff;">water_drop</span>
+          </div>
+          <h3 class="benefit-title" data-i18n="step2_title">Pure Mountain Mist</h3>
+          <p class="benefit-desc" data-i18n="step2_desc">
+            Filtered water misting maintains 85-90% humidity in shaded grow-rooms, replicating deep rainforest canopy conditions.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-wrap" style="background: var(--secondary-hover);">
+            <span class="material-symbols-outlined" style="font-size: 32px; color: #fff;">wb_sunny</span>
+          </div>
+          <h3 class="benefit-title" data-i18n="step3_title">Harvest at First Light</h3>
+          <p class="benefit-desc" data-i18n="step3_desc">
+            Hand-plucked before 6:00 AM while the mushroom caps are crisp and nutrient bioavailability is at its absolute peak.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RECIPE METHOD MODAL -->
+  <div class="modal-backdrop" id="recipe-modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+      <div style="width: 100%; height: 220px; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 20px;">
+        <img src="" id="modal-img" alt="Recipe Dish" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+      <h3 class="recipe-title" id="modal-title" style="font-size: 1.6rem; margin-bottom: 16px;"></h3>
+      
+      <div style="margin-bottom: 20px;">
+        <h4 id="modal-ingredients-header" style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--secondary-hover); margin-bottom: 8px;">
+          Ingredients Needed:
+        </h4>
+        <ul id="modal-ingredients-list" style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: var(--text-muted);"></ul>
+      </div>
+
+      <div>
+        <h4 id="modal-instructions-header" style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--secondary-hover); margin-bottom: 8px;">
+          Cooking Instructions:
+        </h4>
+        <ol id="modal-instructions-list" style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem; color: var(--text-main);"></ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER & CONTACT SECTION (MATCHING POSTER) -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-container">
+      <!-- Col 1: Brand & Bio -->
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="assets/logo.png" alt="Organic Anabe Logo" />
+        </div>
+        <div class="footer-title" data-i18n="brand_name">Organic Anabe</div>
+        <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--secondary-light); margin-bottom: 10px;" data-i18n="brand_sub">
+          Nature Purity In Every Bite
+        </div>
+        <p class="footer-tagline" data-i18n="footer_tagline">
+          Cultivated with reverence for natural purity. Bringing forest-grade vitality and gourmet nutrition directly to your table.
+        </p>
+      </div>
+
+      <!-- Col 2: Contact Numbers & Email from Poster -->
+      <div>
+        <h3 class="footer-col-title" data-i18n="footer_contact_heading">Contact & Helpline</h3>
+        <ul class="contact-list">
+          <li>
+            <a href="tel:9663152977" class="contact-item">
+              <span class="material-symbols-outlined" style="color: var(--secondary-light); font-size: 18px;">call</span>
+              <span>9663152977</span>
+            </a>
+          </li>
+          <li>
+            <a href="tel:7975210984" class="contact-item">
+              <span class="material-symbols-outlined" style="color: var(--secondary-light); font-size: 18px;">call</span>
+              <span>7975210984</span>
+            </a>
+          </li>
+          <li>
+            <a href="tel:9591185530" class="contact-item">
+              <span class="material-symbols-outlined" style="color: var(--secondary-light); font-size: 18px;">call</span>
+              <span>9591185530</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:organicanabe@gmail.com" class="contact-item">
+              <span class="material-symbols-outlined" style="color: var(--secondary-light); font-size: 18px;">mail</span>
+              <span>organicanabe@gmail.com</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/organicanabe" target="_blank" class="contact-item">
+              <span class="material-symbols-outlined" style="color: var(--secondary-light); font-size: 18px;">photo_camera</span>
+              <span>@organicanabe</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 3: QR Code & Direct Order from Poster -->
+      <div>
+        <h3 class="footer-col-title" data-i18n="footer_order_heading">Order Online</h3>
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+          <div class="qr-box-wrap">
+            <img src="assets/poster_qr_clean.png" alt="Scan QR Code to Order Online" class="qr-img" />
+          </div>
+          <a href="https://organabe.in" target="_blank" style="color: var(--secondary-fixed); font-weight: 700; font-size: 0.95rem; text-decoration: none; margin-top: 6px; display: flex; align-items: center; gap: 4px;">
+            <span class="material-symbols-outlined" style="font-size: 18px;">language</span>
+            <span>organabe.in</span>
+          </a>
+          <p style="font-size: 0.74rem; color: rgba(255,255,255,0.65); margin-top: 4px;" data-i18n="footer_scan_note">
+            Scan QR code or click to order instantly on WhatsApp
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thank you message from poster -->
+    <div style="text-align: center; margin-top: 30px;">
+      <div style="font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.08em; color: var(--secondary-fixed); text-transform: uppercase;" data-i18n="thank_you_note">
+        THANK YOU FOR CHOOSING HEALTH & NATURE
+      </div>
+      <div style="color: var(--secondary); margin-top: 4px; font-size: 1.1rem;">❦ ❤ ❦</div>
+    </div>
+
+    <!-- Footer Copyright -->
+    <div class="footer-bottom">
+      <span data-i18n="copyright">© 2026 Organic Anabe (ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ). All Rights Reserved. organabe.in</span>
+      <span>Karnataka, India</span>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE BOTTOM ORDER BAR -->
+  <aside class="mobile-bottom-bar" aria-label="Mobile Quick Actions">
+    <a href="tel:9663152977" class="mobile-bottom-call">
+      <span class="material-symbols-outlined" style="font-size: 20px;">call</span>
+      <span>Call Us</span>
+    </a>
+    <a href="https://wa.me/919663152977?text=Hello%20Organic%20Anabe!%20I%20would%20like%20to%20order%20Fresh%20Harvest%20Mushrooms%20(@%20₹79/200g)." target="_blank" class="mobile-bottom-wa">
+      <span class="material-symbols-outlined" style="font-size: 20px; color: var(--secondary-light);">shopping_bag</span>
+      <span>Order on WhatsApp</span>
+      <span class="price-pill">₹79</span>
+    </a>
+  </aside>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/scroll-hero.js"></script>
+  <script src="js/three-scene.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
