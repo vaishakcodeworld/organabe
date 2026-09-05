@@ -8,7 +8,7 @@ const translations = {
     // Top Ticker
     ticker_text: "100% Farm Fresh Botanical Cultivation • No Chemicals",
     ticker_harvest: "Dawn Harvest (5:30 AM) • Active Ergothioneine & Beta-Glucans",
-    ticker_phone: "Hotline: 9663152977",
+    ticker_phone: "Hotline: 9591185530",
     ticker_delivery: "Delivery Across Bangalore & Karnataka",
 
     // Navigation
@@ -187,7 +187,7 @@ const translations = {
     // Top Ticker
     ticker_text: "100% ಸಾವಯವ ಕೃಷಿ • ಯಾವುದೇ ರಾಸಾಯನಿಕಗಳಿಲ್ಲ",
     ticker_harvest: "ಬೆಳಗಿನ ಜಾವದ ಕೊಯ್ಲು (5:30 AM) • ಗರಿಷ್ಠ ಪೋಷಕಾಂಶಗಳು ಮತ್ತು ನಾರಿನಂಶ",
-    ticker_phone: "ಸಹಾಯವಾಣಿ: 9663152977",
+    ticker_phone: "ಸಹಾಯವಾಣಿ: 9591185530",
     ticker_delivery: "ಬೆಂಗಳೂರು ಮತ್ತು ಕರ್ನಾಟಕದಾದ್ಯಂತ ಸರಬರಾಜು",
 
     // Navigation

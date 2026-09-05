@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const encodedMsg = encodeURIComponent(message);
-    const waUrl = `https://wa.me/919663152977?text=${encodedMsg}`;
+    const waUrl = `https://wa.me/919591185530?text=${encodedMsg}`;
 
     if (waHeroOrderBtn) waHeroOrderBtn.href = waUrl;
     if (waNavOrderBtn) waNavOrderBtn.href = waUrl;
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const oysterMsg = currentLang === 'kn' 
         ? encodeURIComponent(`${dict.wa_msg_prefix}\n\n• 1 ಪ್ಯಾಕ್ ಸಿಂಪಿ ಅಣಬೆ (Oyster 200g @ ₹79)\n\n${dict.wa_msg_suffix}`)
         : encodeURIComponent(`${dict.wa_msg_prefix}\n\n• 1 Pack of Fresh Oyster Mushrooms (200g @ ₹79)\n\n${dict.wa_msg_suffix}`);
-      oysterOrderBtn.href = `https://wa.me/919663152977?text=${oysterMsg}`;
+      oysterOrderBtn.href = `https://wa.me/919591185530?text=${oysterMsg}`;
     }
 
     const milkyOrderBtn = document.getElementById('order-milky-card-btn');
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const milkyMsg = currentLang === 'kn' 
         ? encodeURIComponent(`${dict.wa_msg_prefix}\n\n• 1 ಪ್ಯಾಕ್ ಹಾಲು ಅಣಬೆ (Milky 200g @ ₹79)\n\n${dict.wa_msg_suffix}`)
         : encodeURIComponent(`${dict.wa_msg_prefix}\n\n• 1 Pack of Fresh Milky Mushrooms (200g @ ₹79)\n\n${dict.wa_msg_suffix}`);
-      milkyOrderBtn.href = `https://wa.me/919663152977?text=${milkyMsg}`;
+      milkyOrderBtn.href = `https://wa.me/919591185530?text=${milkyMsg}`;
     }
   }
 

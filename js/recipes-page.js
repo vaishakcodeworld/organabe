@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
                   <span>${btnMethodText}</span>
                 </button>
-                <a href="https://wa.me/919663152977?text=${waMsg}" target="_blank" class="btn-stitch-wa">
+                <a href="https://wa.me/919591185530?text=${waMsg}" target="_blank" class="btn-stitch-wa">
                   <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary-light);">chat</span>
                   <span>${btnWaText}</span>
                 </a>
@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalWaMsg = currentLang === 'kn'
       ? encodeURIComponent(`ನಮಸ್ಕಾರ ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ! ನಾನು "${modalTitleText}" ಮಾಡಲು 200 ಗ್ರಾಂ ತಾಜಾ ಅಣಬೆ ಪ್ಯಾಕ್ ಆರ್ಡರ್ ಮಾಡಲು ಬಯಸುತ್ತೇನೆ.`)
       : encodeURIComponent(`Hello Organic Anabe! I would like to order fresh harvest mushrooms to cook "${modalTitleText}".`);
-    modalWaBtn.href = `https://wa.me/919663152977?text=${modalWaMsg}`;
+    modalWaBtn.href = `https://wa.me/919591185530?text=${modalWaMsg}`;
     modalWaBtnText.textContent = currentLang === 'kn' ? "ಈ ಅಡುಗೆಗೆ ತಾಜಾ ಅಣಬೆ ಖರೀದಿಸಿ" : "Order Fresh Mushrooms for this Recipe";
 
     recipeModal.classList.add('open');
