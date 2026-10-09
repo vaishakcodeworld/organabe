@@ -1,3 +1,16 @@
-3D video/
-scratch/
+# Operating System & IDE Files
 .DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+.vscode/
+.idea/
+
+# Node & Build artifacts (if any)
+node_modules/
+dist/
+build/
+
+# Temporary / Scratch
+scratch/
+downloads/

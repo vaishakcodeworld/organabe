@@ -1,68 +1,117 @@
 /**
  * ORGANIC ANABE (ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ)
- * Interactive Application Controller
- * Bilingual Engine, WhatsApp Order Generator & Recipe Modals
+ * Complete Application Controller
+ * Cart Engine, Smart WhatsApp Router, Bilingual Switcher,
+ * Gallery Uploader, VRL Logistics & Recipe Helpers.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Language State
+  // -------------------------------------------------------------
+  // 1. Language & State Management
+  // -------------------------------------------------------------
   let currentLang = localStorage.getItem('anabe_lang') || 'en';
-  let currentSpecimen = 'both';
-  let orderQuantity = 1;
-  const unitPrice = 79;
 
-  // Language Switch Elements
+  // Cart State (Initialized with default 1 Oyster pack so user immediately sees a live cart)
+  let cartState = {
+    oyster: { id: 'oyster', name: 'Fresh Oyster Mushroom (200g)', price: 79, qty: 1, img: 'assets/oyster_fresh.jpg' },
+    milky: { id: 'milky', name: 'Fresh Milky Mushroom (200g)', price: 79, qty: 0, img: 'assets/milky_fresh.jpg' },
+    combo: { id: 'combo', name: 'Organic Combo (1 Oyster + 1 Milky - 400g)', price: 150, qty: 0, img: 'assets/farm_harvest_basket.jpg' }
+  };
+
+  // Restore cart from localStorage if present
+  try {
+    const savedCart = localStorage.getItem('anabe_cart');
+    if (savedCart) {
+      const parsed = JSON.parse(savedCart);
+      if (parsed && typeof parsed === 'object') {
+        Object.keys(parsed).forEach(k => {
+          if (cartState[k]) cartState[k].qty = Number(parsed[k].qty) || 0;
+        });
+      }
+    }
+  } catch (e) {
+    console.warn("Could not load cart from storage", e);
+  }
+
+  // Restore saved address if present
+  try {
+    const savedAddr = localStorage.getItem('anabe_address');
+    if (savedAddr) {
+      const addrObj = JSON.parse(savedAddr);
+      const nameInput = document.getElementById('cart-name');
+      const phoneInput = document.getElementById('cart-phone');
+      const addressInput = document.getElementById('cart-address');
+      const cityInput = document.getElementById('cart-city');
+      const notesInput = document.getElementById('cart-notes');
+
+      if (nameInput && addrObj.name) nameInput.value = addrObj.name;
+      if (phoneInput && addrObj.phone) phoneInput.value = addrObj.phone;
+      if (addressInput && addrObj.address) addressInput.value = addrObj.address;
+      if (cityInput && addrObj.city) cityInput.value = addrObj.city;
+      if (notesInput && addrObj.notes) notesInput.value = addrObj.notes;
+    }
+  } catch (e) {
+    console.warn("Could not load address from storage", e);
+  }
+
+  // DOM Elements - Language
   const langEnBtn = document.getElementById('lang-en-btn');
   const langKnBtn = document.getElementById('lang-kn-btn');
 
-  // Quantity Elements
-  const qtyCountEl = document.getElementById('qty-count');
-  const qtyMinusBtn = document.getElementById('qty-minus');
-  const qtyPlusBtn = document.getElementById('qty-plus');
-  const waHeroOrderBtn = document.getElementById('wa-order-hero');
-  const waNavOrderBtn = document.getElementById('wa-order-nav');
+  // DOM Elements - Cart
+  const cartOverlay = document.getElementById('cart-overlay');
+  const cartDrawer = document.getElementById('cart-drawer');
+  const cartCloseBtn = document.getElementById('cart-close-btn');
+  const navCartBtn = document.getElementById('nav-cart-btn');
+  const mobileBottomCartBtn = document.getElementById('mobile-bottom-cart-btn');
+  const cartBadgeCount = document.getElementById('cart-badge-count');
+  const mobileCartBadgeCount = document.getElementById('mobile-cart-badge-count');
+  const mobileCartTotalVal = document.getElementById('mobile-cart-total-val');
+  const cartItemsList = document.getElementById('cart-items-list');
+  const cartSubtotalEl = document.getElementById('cart-subtotal-val');
+  const cartTotalValEl = document.getElementById('cart-total-val');
+  const btnCartCheckout = document.getElementById('btn-cart-checkout');
 
-  // Specimen Elements
-  const specimenBothBtn = document.getElementById('specimen-both-btn');
-  const specimenOysterBtn = document.getElementById('specimen-oyster-btn');
-  const specimenMilkyBtn = document.getElementById('specimen-milky-btn');
-  const specimenTitleEl = document.getElementById('specimen-title');
-  const specimenSubEl = document.getElementById('specimen-sub');
+  // Direct WhatsApp Helper
+  function sendDirectWhatsApp(messageText, phoneNum = "919591185530") {
+    const cleanPhone = phoneNum.replace(/[^0-9]/g, '');
+    const encodedMsg = encodeURIComponent(messageText || "Hello Organic Anabe! I would like to inquire about fresh organic mushrooms.");
+    const url = `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${encodedMsg}`;
+    window.open(url, '_blank');
+  }
+  window.sendDirectWhatsApp = sendDirectWhatsApp;
 
-  // Recipe Modal Elements
-  const recipeModal = document.getElementById('recipe-modal');
-  const modalCloseBtn = document.getElementById('modal-close-btn');
-  const modalImg = document.getElementById('modal-img');
-  const modalTitle = document.getElementById('modal-title');
-  const modalIngredientsList = document.getElementById('modal-ingredients-list');
-  const modalInstructionsList = document.getElementById('modal-instructions-list');
-  const modalIngredientsHeader = document.getElementById('modal-ingredients-header');
-  const modalInstructionsHeader = document.getElementById('modal-instructions-header');
-
-  // Mobile Menu
+  // DOM Elements - Mobile Navigation
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const navLinks = document.getElementById('nav-links');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  const mobileDrawerOverlay = document.getElementById('mobile-drawer-overlay');
+  const mobileDrawerClose = document.getElementById('mobile-drawer-close');
 
-  // Function to Update Language
+  // Helper: Device check for smart WhatsApp behavior
+  function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+  }
+
+  // -------------------------------------------------------------
+  // 2. Bilingual Engine (Simple English & Natural Kannada)
+  // -------------------------------------------------------------
   function updateLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('anabe_lang', lang);
     document.body.setAttribute('data-lang', lang);
     document.documentElement.lang = lang;
 
-    // Toggle active classes on buttons
     if (lang === 'kn') {
-      langKnBtn.classList.add('active');
-      langEnBtn.classList.remove('active');
+      if (langKnBtn) langKnBtn.classList.add('active');
+      if (langEnBtn) langEnBtn.classList.remove('active');
       document.title = "ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ (Organic Anabe) | ತಾಜಾ ಸಾವಯವ ಅಣಬೆಗಳು";
     } else {
-      langEnBtn.classList.add('active');
-      langKnBtn.classList.remove('active');
-      document.title = "Organic Anabe (ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ) | Fresh Gourmet Mushrooms";
+      if (langEnBtn) langEnBtn.classList.add('active');
+      if (langKnBtn) langKnBtn.classList.remove('active');
+      document.title = "Organic Anabe | Fresh Organic Mushrooms in Karnataka";
     }
 
-    // Translate all elements with data-i18n
-    const dict = translations[lang] || translations.en;
+    const dict = (typeof translations !== 'undefined' && translations[lang]) ? translations[lang] : {};
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
       if (dict[key]) {
@@ -70,211 +119,348 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Update Specimen Caption
-    updateSpecimenCaption();
-
-    // Update WhatsApp Order links
-    updateWhatsAppLink();
+    renderCart();
   }
 
-  // Update Specimen Caption
-  function updateSpecimenCaption() {
-    const dict = translations[currentLang] || translations.en;
-    if (currentSpecimen === 'oyster') {
-      if (specimenTitleEl) specimenTitleEl.textContent = dict.caption_oyster;
-      if (specimenSubEl) specimenSubEl.textContent = dict.caption_sub_oyster;
-    } else if (currentSpecimen === 'milky') {
-      if (specimenTitleEl) specimenTitleEl.textContent = dict.caption_milky;
-      if (specimenSubEl) specimenSubEl.textContent = dict.caption_sub_milky;
-    } else {
-      if (specimenTitleEl) specimenTitleEl.textContent = dict.caption_both;
-      if (specimenSubEl) specimenSubEl.textContent = dict.caption_sub_both;
-    }
-  }
-
-  // Language Event Listeners
   if (langEnBtn) langEnBtn.addEventListener('click', () => updateLanguage('en'));
   if (langKnBtn) langKnBtn.addEventListener('click', () => updateLanguage('kn'));
 
-  // 2. Quantity Counter & WhatsApp Pre-fill
-  function updateWhatsAppLink(packType = "Mixed / Assorted Fresh Packs") {
-    const dict = translations[currentLang] || translations.en;
-    const totalAmount = orderQuantity * unitPrice;
-    
-    let message = "";
-    if (currentLang === 'kn') {
-      message = `${dict.wa_msg_prefix}\n\n• ${orderQuantity} ${dict.wa_msg_pack} (${packType})\n• ಒಟ್ಟು ಮೊತ್ತ: ₹${totalAmount}\n\n${dict.wa_msg_suffix}`;
-    } else {
-      message = `${dict.wa_msg_prefix}\n\n• ${orderQuantity} ${dict.wa_msg_pack} (${packType})\n• Total Value: ₹${totalAmount}\n\n${dict.wa_msg_suffix}`;
-    }
-
-    const encodedMsg = encodeURIComponent(message);
-    const waUrl = `https://wa.me/919591185530?text=${encodedMsg}`;
-
-    if (waHeroOrderBtn) waHeroOrderBtn.href = waUrl;
-    if (waNavOrderBtn) waNavOrderBtn.href = waUrl;
-
-    // Update product card buttons
-    const oysterOrderBtn = document.getElementById('order-oyster-card-btn');
-    if (oysterOrderBtn) {
-      const oysterMsg = currentLang === 'kn' 
-        ? encodeURIComponent(`${dict.wa_msg_prefix}\n\n• 1 ಪ್ಯಾಕ್ ಸಿಂಪಿ ಅಣಬೆ (Oyster 200g @ ₹79)\n\n${dict.wa_msg_suffix}`)
-        : encodeURIComponent(`${dict.wa_msg_prefix}\n\n• 1 Pack of Fresh Oyster Mushrooms (200g @ ₹79)\n\n${dict.wa_msg_suffix}`);
-      oysterOrderBtn.href = `https://wa.me/919591185530?text=${oysterMsg}`;
-    }
-
-    const milkyOrderBtn = document.getElementById('order-milky-card-btn');
-    if (milkyOrderBtn) {
-      const milkyMsg = currentLang === 'kn' 
-        ? encodeURIComponent(`${dict.wa_msg_prefix}\n\n• 1 ಪ್ಯಾಕ್ ಹಾಲು ಅಣಬೆ (Milky 200g @ ₹79)\n\n${dict.wa_msg_suffix}`)
-        : encodeURIComponent(`${dict.wa_msg_prefix}\n\n• 1 Pack of Fresh Milky Mushrooms (200g @ ₹79)\n\n${dict.wa_msg_suffix}`);
-      milkyOrderBtn.href = `https://wa.me/919591185530?text=${milkyMsg}`;
-    }
+  // -------------------------------------------------------------
+  // 3. Cart Engine (+ / - Quantities & Full Total Calculation)
+  // -------------------------------------------------------------
+  function saveCart() {
+    try {
+      localStorage.setItem('anabe_cart', JSON.stringify(cartState));
+    } catch (e) {}
   }
 
-  if (qtyMinusBtn && qtyPlusBtn && qtyCountEl) {
-    qtyMinusBtn.addEventListener('click', () => {
-      if (orderQuantity > 1) {
-        orderQuantity--;
-        qtyCountEl.textContent = orderQuantity;
-        updateWhatsAppLink();
+  window.addToCart = function(productId, qty = 1) {
+    if (cartState[productId]) {
+      cartState[productId].qty += qty;
+      saveCart();
+      renderCart();
+      openCart();
+    }
+  };
+
+  window.changeCartQty = function(productId, delta) {
+    if (cartState[productId]) {
+      cartState[productId].qty += delta;
+      if (cartState[productId].qty < 0) cartState[productId].qty = 0;
+      saveCart();
+      renderCart();
+    }
+  };
+
+  function renderCart() {
+    let totalItems = 0;
+    let grandTotal = 0;
+    let itemsHtml = '';
+
+    Object.keys(cartState).forEach((key) => {
+      const item = cartState[key];
+      if (item.qty > 0) {
+        totalItems += item.qty;
+        const itemTotal = item.qty * item.price;
+        grandTotal += itemTotal;
+
+        itemsHtml += `
+          <div class="cart-item-card">
+            <img src="${item.img}" alt="${item.name}" class="cart-item-thumb" />
+            <div class="cart-item-info">
+              <div class="cart-item-name">${item.name}</div>
+              <div class="cart-item-rate">₹${item.price} each</div>
+            </div>
+            <div class="cart-qty-stepper">
+              <button type="button" class="cart-qty-btn" onclick="changeCartQty('${key}', -1)" aria-label="Decrease quantity">-</button>
+              <span class="cart-qty-val">${item.qty}</span>
+              <button type="button" class="cart-qty-btn" onclick="changeCartQty('${key}', 1)" aria-label="Increase quantity">+</button>
+            </div>
+            <div class="cart-item-total">₹${itemTotal}</div>
+          </div>
+        `;
       }
     });
 
-    qtyPlusBtn.addEventListener('click', () => {
-      orderQuantity++;
-      qtyCountEl.textContent = orderQuantity;
-      updateWhatsAppLink();
-    });
-  }
-
-  // 3. Specimen Switchers
-  function setSpecimenMode(mode) {
-    currentSpecimen = mode;
-    [specimenBothBtn, specimenOysterBtn, specimenMilkyBtn].forEach((btn) => {
-      if (btn) btn.classList.remove('active');
-    });
-
-    if (mode === 'both' && specimenBothBtn) specimenBothBtn.classList.add('active');
-    if (mode === 'oyster' && specimenOysterBtn) specimenOysterBtn.classList.add('active');
-    if (mode === 'milky' && specimenMilkyBtn) specimenMilkyBtn.classList.add('active');
-
-    if (typeof window.focusMushroomSpecimen === 'function') {
-      window.focusMushroomSpecimen(mode);
+    if (totalItems === 0) {
+      itemsHtml = `
+        <div style="text-align: center; padding: 40px 10px; color: var(--text-muted);">
+          <span class="material-symbols-outlined" style="font-size: 48px; color: var(--secondary); margin-bottom: 8px;">shopping_basket</span>
+          <p style="font-weight: 700; font-size: 1rem;">Your Cart is Empty</p>
+          <p style="font-size: 0.85rem; margin-top: 4px;">Choose from our Fresh Oyster or Milky mushrooms to add them here!</p>
+          <button type="button" class="btn-order-primary" onclick="addToCart('oyster', 1)" style="margin: 16px auto 0; font-size: 0.82rem; padding: 8px 16px;">
+            + Add 1 Oyster Pack (₹79)
+          </button>
+        </div>
+      `;
     }
-    updateSpecimenCaption();
+
+    if (cartItemsList) cartItemsList.innerHTML = itemsHtml;
+    if (cartBadgeCount) cartBadgeCount.textContent = totalItems;
+    if (mobileCartBadgeCount) mobileCartBadgeCount.textContent = totalItems;
+    if (cartSubtotalEl) cartSubtotalEl.textContent = `₹${grandTotal}`;
+    if (cartTotalValEl) cartTotalValEl.textContent = `₹${grandTotal}`;
+    if (mobileCartTotalVal) mobileCartTotalVal.textContent = `₹${grandTotal}`;
+
+    // Update hero quick order buttons with latest quantities
+    const heroOysterQty = cartState.oyster.qty;
+    const heroMilkyQty = cartState.milky.qty;
+    const heroOysterQtyEl = document.getElementById('hero-oyster-qty');
+    const heroMilkyQtyEl = document.getElementById('hero-milky-qty');
+    if (heroOysterQtyEl) heroOysterQtyEl.textContent = heroOysterQty;
+    if (heroMilkyQtyEl) heroMilkyQtyEl.textContent = heroMilkyQty;
   }
 
-  if (specimenBothBtn) specimenBothBtn.addEventListener('click', () => setSpecimenMode('both'));
-  if (specimenOysterBtn) specimenOysterBtn.addEventListener('click', () => setSpecimenMode('oyster'));
-  if (specimenMilkyBtn) specimenMilkyBtn.addEventListener('click', () => setSpecimenMode('milky'));
+  function openCart() {
+    if (cartOverlay) cartOverlay.classList.add('open');
+    if (cartDrawer) cartDrawer.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
 
-  // 4. Recipe Tab Filtering
-  const recipeTabBtns = document.querySelectorAll('.recipe-tab-btn');
-  const recipeCards = document.querySelectorAll('.recipe-card');
+  function closeCart() {
+    if (cartOverlay) cartOverlay.classList.remove('open');
+    if (cartDrawer) cartDrawer.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
-  recipeTabBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      recipeTabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter');
+  if (navCartBtn) navCartBtn.addEventListener('click', openCart);
+  if (mobileBottomCartBtn) mobileBottomCartBtn.addEventListener('click', openCart);
+  if (cartCloseBtn) cartCloseBtn.addEventListener('click', closeCart);
+  if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
 
-      recipeCards.forEach((card) => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || filter === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
+  // -------------------------------------------------------------
+  // 4. Order Assembly & Smart WhatsApp Flow (Mobile vs Laptop)
+  // -------------------------------------------------------------
+  let latestOrderMessage = "";
+
+  function compileOrderSlip() {
+    const nameInput = document.getElementById('cart-name');
+    const phoneInput = document.getElementById('cart-phone');
+    const addressInput = document.getElementById('cart-address');
+    const cityInput = document.getElementById('cart-city');
+    const notesInput = document.getElementById('cart-notes');
+
+    const name = nameInput ? nameInput.value.trim() : "";
+    const phone = phoneInput ? phoneInput.value.trim() : "";
+    const address = addressInput ? addressInput.value.trim() : "";
+    const city = cityInput ? cityInput.value.trim() : "";
+    const notes = notesInput ? notesInput.value.trim() : "";
+
+    // Save to localStorage for convenience
+    try {
+      localStorage.setItem('anabe_address', JSON.stringify({ name, phone, address, city, notes }));
+    } catch (e) {}
+
+    let totalItems = 0;
+    let grandTotal = 0;
+    let itemsText = "";
+
+    Object.keys(cartState).forEach((key) => {
+      const item = cartState[key];
+      if (item.qty > 0) {
+        totalItems += item.qty;
+        const total = item.qty * item.price;
+        grandTotal += total;
+        itemsText += `• ${item.name}: ${item.qty} pack(s) = ₹${total}\n`;
+      }
+    });
+
+    if (totalItems === 0) {
+      alert("Please add at least 1 pack of mushrooms to your cart before ordering!");
+      return null;
+    }
+
+    if (!name || !address) {
+      alert("Please enter your Name and Delivery Address so our farm delivery team can reach you!");
+      if (!name && nameInput) nameInput.focus();
+      else if (!address && addressInput) addressInput.focus();
+      return null;
+    }
+
+    const isKn = currentLang === 'kn';
+    let slip = "";
+
+    if (isKn) {
+      slip = `*ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ - ಹೊಸ ಆರ್ಡರ್* 🍄\n` +
+             `--------------------------------\n` +
+             `*ಗ್ರಾಹಕರ ಹೆಸರು:* ${name}\n` +
+             `*ಮೊಬೈಲ್ ಸಂಖ್ಯೆ:* ${phone || 'ಲಭ್ಯವಿಲ್ಲ'}\n` +
+             `*ಡೆಲಿವರಿ ವಿಳಾಸ:* ${address}\n` +
+             `*ಊರು / ಪಿನ್‌ಕೋಡ್:* ${city || 'ಕರ್ನಾಟಕ'}\n` +
+             (notes ? `*ಸೂಚನೆ/ಲ್ಯಾಂಡ್‌ಮಾರ್ಕ್:* ${notes}\n` : '') +
+             `--------------------------------\n` +
+             `*ಆರ್ಡರ್ ಮಾಡಿದ ಅಣಬೆಗಳು:*\n${itemsText}` +
+             `--------------------------------\n` +
+             `*ಒಟ್ಟು ಪಾವತಿಸಬೇಕಾದ ಮೊತ್ತ:* ₹${grandTotal}\n` +
+             `*ಪಾವತಿ ವಿಧಾನ:* ಡೆಲಿವರಿ ಬಂದಾಗ ನಗದು / UPI (PhonePe/GPay)\n` +
+             `--------------------------------\n` +
+             `ದಯವಿಟ್ಟು ಆರ್ಡರ್ ದೃಢೀಕರಿಸಿ ಮತ್ತು ಡೆಲಿವರಿ ಸಮಯವನ್ನು ತಿಳಿಸಿ. ಧನ್ಯವಾದಗಳು!`;
+    } else {
+      slip = `*Organic Anabe - Fresh Mushroom Order* 🍄\n` +
+             `--------------------------------\n` +
+             `*Customer Name:* ${name}\n` +
+             `*Phone Number:* ${phone || 'Not provided'}\n` +
+             `*Delivery Address:* ${address}\n` +
+             `*City / Pincode:* ${city || 'Karnataka'}\n` +
+             (notes ? `*Landmark / Notes:* ${notes}\n` : '') +
+             `--------------------------------\n` +
+             `*Items Ordered:*\n${itemsText}` +
+             `--------------------------------\n` +
+             `*TOTAL PAYABLE AMOUNT:* ₹${grandTotal}\n` +
+             `*Payment:* Cash on Delivery / UPI on Delivery\n` +
+             `--------------------------------\n` +
+             `Please confirm my order and share estimated delivery time. Thank you!`;
+    }
+
+    return slip;
+  }
+
+  // Handle Checkout Click - DIRECTLY TO WHATSAPP
+  if (btnCartCheckout) {
+    btnCartCheckout.addEventListener('click', () => {
+      const slip = compileOrderSlip();
+      if (!slip) return;
+      sendDirectWhatsApp(slip, "919591185530");
+    });
+  }
+
+
+
+  // -------------------------------------------------------------
+  // 6. Interactive Karnataka Hardwood Pellets Bulk Calculator Logic
+  // -------------------------------------------------------------
+  const pelletPresetChips = document.querySelectorAll('.pellet-chip-btn');
+  const pelletQtyInput = document.getElementById('pellet-qty-input');
+  const pelletDistSelect = document.getElementById('pellet-district-select');
+  const pelletVarietySelect = document.getElementById('pellet-variety-select');
+  const calcOutQty = document.getElementById('calc-out-qty');
+  const calcOutBags = document.getElementById('calc-out-bags');
+  const calcOutYield = document.getElementById('calc-out-yield');
+  const calcOutDist = document.getElementById('calc-out-dist');
+  const btnPelletWaCalc = document.getElementById('btn-pellet-wa-calc');
+
+  function calculatePelletSpecs() {
+    let qty = 30;
+    if (pelletQtyInput) {
+      qty = parseInt(pelletQtyInput.value, 10);
+      if (isNaN(qty) || qty < 30) qty = 30;
+    }
+
+    const bags = Math.ceil(qty / 30);
+    const minYield = Math.round(qty * 1.5);
+    const maxYield = Math.round(qty * 2.0);
+    const district = pelletDistSelect ? pelletDistSelect.value : "Mysuru";
+
+    if (calcOutQty) calcOutQty.textContent = `${qty} KG`;
+    if (calcOutBags) {
+      if (qty >= 1000) {
+        const tonnes = (qty / 1000).toFixed(1);
+        calcOutBags.textContent = `${tonnes} Tonnes (${bags} x 30 KG Sacks)`;
+      } else {
+        calcOutBags.textContent = `${bags} x 30 KG Heavy Sack${bags > 1 ? 's' : ''}`;
+      }
+    }
+    if (calcOutYield) calcOutYield.textContent = `~${minYield} – ${maxYield} KG Fresh`;
+    if (calcOutDist) calcOutDist.textContent = `${district}, Karnataka`;
+  }
+
+  if (pelletPresetChips.length > 0) {
+    pelletPresetChips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        pelletPresetChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const chipQty = chip.getAttribute('data-qty');
+        if (pelletQtyInput && chipQty) {
+          pelletQtyInput.value = chipQty;
+          calculatePelletSpecs();
         }
       });
     });
-  });
+  }
 
-  // 5. Recipe Modal Controller
-  window.openRecipeModal = function(recipeKey) {
-    const data = recipeDetails[recipeKey];
-    if (!data || !recipeModal) return;
-
-    modalImg.src = data.img;
-    modalTitle.textContent = currentLang === 'kn' ? data.title_kn : data.title_en;
-
-    modalIngredientsHeader.textContent = currentLang === 'kn' ? "ಅಗತ್ಯವಿರುವ ಸಾಮಗ್ರಿಗಳು:" : "Ingredients Needed:";
-    modalInstructionsHeader.textContent = currentLang === 'kn' ? "ಮಾಡುವ ಸರಳ ವಿಧಾನ:" : "Cooking Instructions:";
-
-    const ingList = currentLang === 'kn' ? data.ingredients_kn : data.ingredients_en;
-    modalIngredientsList.innerHTML = ingList.map(item => `<li>✦ ${item}</li>`).join('');
-
-    const stepList = currentLang === 'kn' ? data.instructions_kn : data.instructions_en;
-    modalInstructionsList.innerHTML = stepList.map((step, idx) => `<li><strong>${idx + 1}.</strong> ${step}</li>`).join('');
-
-    recipeModal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  };
-
-  if (modalCloseBtn) {
-    modalCloseBtn.addEventListener('click', () => {
-      recipeModal.classList.remove('open');
-      document.body.style.overflow = '';
+  if (pelletQtyInput) {
+    pelletQtyInput.addEventListener('input', () => {
+      const currentVal = pelletQtyInput.value;
+      let matched = false;
+      pelletPresetChips.forEach(chip => {
+        if (chip.getAttribute('data-qty') === currentVal) {
+          chip.classList.add('active');
+          matched = true;
+        } else {
+          chip.classList.remove('active');
+        }
+      });
+      calculatePelletSpecs();
     });
   }
 
-  if (recipeModal) {
-    recipeModal.addEventListener('click', (e) => {
-      if (e.target === recipeModal) {
-        recipeModal.classList.remove('open');
-        document.body.style.overflow = '';
+  if (pelletDistSelect) {
+    pelletDistSelect.addEventListener('change', calculatePelletSpecs);
+  }
+
+  if (btnPelletWaCalc) {
+    btnPelletWaCalc.addEventListener('click', (e) => {
+      e.preventDefault();
+      let qty = 30;
+      if (pelletQtyInput) {
+        qty = parseInt(pelletQtyInput.value, 10);
+        if (isNaN(qty) || qty < 30) qty = 30;
       }
+      const bags = Math.ceil(qty / 30);
+      const district = pelletDistSelect ? pelletDistSelect.value : "Mysuru";
+      const variety = pelletVarietySelect ? pelletVarietySelect.value : "Mushroom Cultivation";
+      const minYield = Math.round(qty * 1.5);
+      const maxYield = Math.round(qty * 2.0);
+
+      const msg = `*Inquiry: Mushroom Hardwood Pellets (Karnataka Wholesale)*\n` +
+                  `-----------------------------------------------------\n` +
+                  `• *Order Volume:* ${qty} KG (${bags} x 30 KG Bags)\n` +
+                  `• *Destination District:* ${district}, Karnataka\n` +
+                  `• *Intended Variety/Use:* ${variety}\n` +
+                  `• *Substrate Quality:* 100% Pure Broadleaf Hardwood (0% Chemicals)\n` +
+                  `• *Est. Mushroom Yield:* ~${minYield} – ${maxYield} KG Fresh\n` +
+                  `-----------------------------------------------------\n` +
+                  `Hello! Please share the price per KG/sack and transport dispatch options to ${district}. Thank you!`;
+
+      sendDirectWhatsApp(msg, "919591185530");
     });
   }
 
-  // 6. Mobile Drawer Controller
-  const mobileDrawerOverlay = document.getElementById('mobile-drawer-overlay');
-  const mobileDrawer = document.getElementById('mobile-drawer');
-  const mobileDrawerClose = document.getElementById('mobile-drawer-close');
-
-  function openDrawer() {
+  // -------------------------------------------------------------
+  // 8. Mobile Navigation Drawer
+  // -------------------------------------------------------------
+  function openMobileDrawer() {
     if (mobileDrawerOverlay) mobileDrawerOverlay.classList.add('open');
     if (mobileDrawer) mobileDrawer.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
-  function closeDrawer() {
+  function closeMobileDrawer() {
     if (mobileDrawerOverlay) mobileDrawerOverlay.classList.remove('open');
     if (mobileDrawer) mobileDrawer.classList.remove('open');
     document.body.style.overflow = '';
   }
 
-  if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', openDrawer);
-  }
-  if (mobileDrawerClose) {
-    mobileDrawerClose.addEventListener('click', closeDrawer);
-  }
-  if (mobileDrawerOverlay) {
-    mobileDrawerOverlay.addEventListener('click', closeDrawer);
-  }
-  if (mobileDrawer) {
-    mobileDrawer.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', closeDrawer);
-    });
-  }
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileDrawer);
+  if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', closeMobileDrawer);
+  if (mobileDrawerOverlay) mobileDrawerOverlay.addEventListener('click', closeMobileDrawer);
 
-  // 7. Toggle in-card Step Accordion for Index Recipes
-  window.toggleRecipeAccordion = function(contentId, btn) {
-    const content = document.getElementById(contentId);
-    if (!content) return;
-    const isOpen = content.classList.contains('open');
-    if (isOpen) {
-      content.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    } else {
-      content.classList.add('open');
-      btn.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
-    }
-  };
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', closeMobileDrawer);
+  });
 
-  // Initialize Language and Links
+  // -------------------------------------------------------------
+  // 9. Initial Load Setup
+  // -------------------------------------------------------------
   updateLanguage(currentLang);
+  renderCart();
 });
+
+// Recipe Accordion helper function
+window.toggleRecipeAccordion = function(accordionId, btnEl) {
+  const content = document.getElementById(accordionId);
+  if (!content) return;
+  const isExpanded = btnEl.getAttribute('aria-expanded') === 'true';
+  btnEl.setAttribute('aria-expanded', !isExpanded);
+  content.classList.toggle('open');
+};

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 1. Main Home Page (Target: Mysore, Mandya, Hassan, Chamarajanagar & Karnataka) -->
+  <url>
+    <loc>https://organabe.in/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://organabe.in/" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://organabe.in/?lang=kn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://organabe.in/" />
+
+    <!-- Product Image: Fresh Oyster Mushroom -->
+    <image:image>
+      <image:loc>https://organabe.in/assets/oyster_fresh.jpg</image:loc>
+      <image:title>Fresh Organic Oyster Mushroom (ಸಿಂಪಿ ಅಣಬೆ) - Mysore and Mandya</image:title>
+      <image:caption>100% Chemical-free farm-fresh Oyster mushrooms (Pleurotus ostreatus) grown organically and harvested daily for Mysore, Mandya, Hassan, and Chamarajanagar.</image:caption>
+      <image:geo_location>Mysore, Karnataka, India</image:geo_location>
+    </image:image>
+
+    <!-- Product Image: Fresh Milky Mushroom -->
+    <image:image>
+      <image:loc>https://organabe.in/assets/milky_fresh.jpg</image:loc>
+      <image:title>Fresh Organic Milky Mushroom (ಹಾಲು ಅಣಬೆ) - Mysore and Mandya</image:title>
+      <image:caption>Delicious, protein-rich fresh Milky mushrooms (Calocybe indica) grown naturally and delivered farm-to-doorstep in Mysore, Mandya, and Karnataka.</image:caption>
+      <image:geo_location>Mandya, Karnataka, India</image:geo_location>
+    </image:image>
+
+    <!-- Product Image: Hardwood Pellets for Mushroom Cultivation -->
+    <image:image>
+      <image:loc>https://organabe.in/assets/hardwood_pellets.jpg</image:loc>
+      <image:title>Mushroom Hardwood Pellets in Karnataka (ಹಾರ್ಡ್‌ವುಡ್ ಪೆಲ್ಲೆಟ್‌ಗಳು)</image:title>
+      <image:caption>Pure hardwood sawdust pellets for mushroom cultivation. Minimum order 30 KG up to multiple commercial tonnes, supplied across all 31 districts of Karnataka.</image:caption>
+      <image:geo_location>Karnataka, India</image:geo_location>
+    </image:image>
+
+    <!-- Farm Gallery Images -->
+    <image:image>
+      <image:loc>https://organabe.in/gallery/founder_grow_room.jpeg</image:loc>
+      <image:title>Organic Anabe Mushroom Growing Room Karnataka</image:title>
+      <image:caption>Controlled humidity cultivation chamber for high-yield chemical-free mushrooms in Karnataka.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://organabe.in/gallery/c.jpeg</image:loc>
+      <image:title>Organic Oyster Mushrooms Ready for Harvest</image:title>
+      <image:caption>Pristine Oyster mushroom clusters cultivated on sterilized substrate.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 2. Hardwood Pellets Substrate Section (Karnataka Statewide) -->
+  <url>
+    <loc>https://organabe.in/#pellets</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://organabe.in/assets/hardwood_pellets.jpg</image:loc>
+      <image:title>Hardwood Sawdust Pellets for Mushroom Cultivation in Karnataka</image:title>
+      <image:caption>High-yield hardwood substrate pellets for commercial mushroom growers across Bengaluru, Mysuru, Mandya, Hassan, Shivamogga, and all Karnataka.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 3. Gourmet Mushroom Recipes Page -->
+  <url>
+    <loc>https://organabe.in/recipes.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://organabe.in/recipes.html" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://organabe.in/recipes.html?lang=kn" />
+  </url>
+
+  <!-- 4. Health Benefits of Oyster and Milky Mushrooms -->
+  <url>
+    <loc>https://organabe.in/#benefits</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- 5. About Organic Anabe Farm & Founders -->
+  <url>
+    <loc>https://organabe.in/#about</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- 6. Real Farm Photo Gallery -->
+  <url>
+    <loc>https://organabe.in/#gallery</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- 7. Direct Contact & WhatsApp Order (Mysore, Mandya, Karnataka) -->
+  <url>
+    <loc>https://organabe.in/#contact</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+</urlset>
