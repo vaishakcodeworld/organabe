@@ -11,6 +11,8 @@ node_modules/
 dist/
 build/
 
-# Temporary / Scratch
+# Temporary / Scratch & User Uploaded Videos
 scratch/
 downloads/
+*.mp4
+WhatsApp Video*
