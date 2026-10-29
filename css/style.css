@@ -5087,6 +5087,331 @@ body[data-lang="kn"] h3 {
   transform: translateY(-2px);
 }
 
+/* ==========================================================================
+   MUSHROOM SPAWN SECTION (OYSTER & MILKY ₹130/KG • MIN 10 KG)
+   ========================================================================== */
+.spawn-section {
+  padding: 85px 20px;
+  background: linear-gradient(145deg, #091c12 0%, #133321 50%, #0b2115 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.spawn-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+}
+
+.spawn-header-wrap {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 36px;
+}
+
+.spawn-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(254, 212, 136, 0.14);
+  border: 1px solid var(--secondary);
+  color: var(--secondary-fixed);
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.spawn-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 3.6vw, 2.7rem);
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.spawn-title span {
+  color: var(--secondary-fixed);
+}
+
+.spawn-price-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(197, 160, 89, 0.16);
+  border: 1.5px solid var(--secondary);
+  border-radius: var(--radius-full);
+  padding: 8px 24px;
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--secondary-light);
+  margin-bottom: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.spawn-price-banner .price-highlight {
+  font-size: 1.25rem;
+  color: #ffffff;
+  background: var(--secondary);
+  color: var(--tertiary-dark);
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.spawn-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Dual Spawn Grid */
+.spawn-dual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+
+.spawn-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(197, 160, 89, 0.35);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.spawn-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--secondary);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.spawn-img-wrap {
+  position: relative;
+  height: 270px;
+  overflow: hidden;
+  border-bottom: 1.5px solid rgba(197, 160, 89, 0.25);
+}
+
+.spawn-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.spawn-card:hover .spawn-img-wrap img {
+  transform: scale(1.04);
+}
+
+.spawn-card-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(10, 28, 18, 0.88);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--secondary);
+  color: var(--secondary-light);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.spawn-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.spawn-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.spawn-card-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.spawn-sci-name {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--secondary-light);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.spawn-card-desc {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.spawn-specs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.spawn-spec-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 6px 10px;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.spawn-spec-pill .material-symbols-outlined {
+  font-size: 15px;
+  color: var(--secondary-light);
+}
+
+.spawn-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 12px 18px;
+  margin-bottom: 18px;
+}
+
+.spawn-price-rate {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--secondary-fixed);
+}
+
+.spawn-price-sub {
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+.spawn-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn-spawn-cart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--secondary);
+  color: var(--tertiary-dark);
+  padding: 12px 16px;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 0.86rem;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-spawn-cart:hover {
+  background: var(--secondary-light);
+  transform: translateY(-2px);
+}
+
+.btn-spawn-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #25d366;
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 0.86rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-spawn-wa:hover {
+  background: #1eb857;
+  transform: translateY(-2px);
+}
+
+/* Spawn Perks Bar */
+.spawn-perks-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+
+.spawn-perk-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.spawn-perk-icon {
+  background: var(--secondary);
+  color: var(--tertiary-dark);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 22px;
+}
+
+.spawn-perk-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.spawn-perk-desc {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.45;
+}
+
 /* Customer Testimonials Section */
 .testimonials-section {
   padding: 60px 24px;
@@ -5488,6 +5813,7 @@ body[data-lang="kn"] h3 {
   .products-section,
   .benefits-section,
   .recipes-preview-section,
+  .spawn-section,
   .about-section,
   .gallery-section,
   .contact-section,

@@ -13,9 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Cart State (Initialized with default 1 Oyster pack so user immediately sees a live cart)
   let cartState = {
-    oyster: { id: 'oyster', name: 'Fresh Oyster Mushroom (200g)', price: 79, qty: 1, img: 'assets/oyster_fresh.jpg' },
-    milky: { id: 'milky', name: 'Fresh Milky Mushroom (200g)', price: 79, qty: 0, img: 'assets/milky_fresh.jpg' },
-    combo: { id: 'combo', name: 'Organic Combo (1 Oyster + 1 Milky - 400g)', price: 150, qty: 0, img: 'assets/farm_harvest_basket.jpg' }
+    oyster: { id: 'oyster', name: 'Fresh Oyster Mushroom (200g)', price: 79, qty: 1, unit: 'pack', img: 'assets/oyster_fresh.jpg' },
+    milky: { id: 'milky', name: 'Fresh Milky Mushroom (200g)', price: 79, qty: 0, unit: 'pack', img: 'assets/milky_fresh.jpg' },
+    combo: { id: 'combo', name: 'Organic Combo (1 Oyster + 1 Milky - 400g)', price: 150, qty: 0, unit: 'combo', img: 'assets/farm_harvest_basket.jpg' },
+    oyster_spawn: { id: 'oyster_spawn', name: 'Oyster Mushroom Spawn (Min 10 KG)', price: 130, minQty: 10, qty: 0, unit: 'KG', img: 'assets/oyster_spawn.jpg' },
+    milky_spawn: { id: 'milky_spawn', name: 'Milky Mushroom Spawn (Min 10 KG)', price: 130, minQty: 10, qty: 0, unit: 'KG', img: 'assets/milky_spawn.jpg' }
   };
 
   // Restore cart from localStorage if present
@@ -136,7 +138,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addToCart = function(productId, qty = 1) {
     if (cartState[productId]) {
-      cartState[productId].qty += qty;
+      const min = cartState[productId].minQty || 1;
+      if (cartState[productId].qty === 0) {
+        cartState[productId].qty = Math.max(min, qty);
+      } else {
+        cartState[productId].qty += qty;
+      }
       saveCart();
       renderCart();
       openCart();
@@ -145,8 +152,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.changeCartQty = function(productId, delta) {
     if (cartState[productId]) {
-      cartState[productId].qty += delta;
-      if (cartState[productId].qty < 0) cartState[productId].qty = 0;
+      const min = cartState[productId].minQty || 1;
+      const step = min > 1 ? 5 : 1;
+      const actualDelta = delta * step;
+      const newQty = cartState[productId].qty + actualDelta;
+      if (newQty < min) {
+        cartState[productId].qty = 0;
+      } else {
+        cartState[productId].qty = newQty;
+      }
       saveCart();
       renderCart();
     }
@@ -164,19 +178,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const itemTotal = item.qty * item.price;
         grandTotal += itemTotal;
 
+        const rateLabel = item.unit === 'KG' ? `₹${item.price} / KG (Min ${item.minQty || 10} KG)` : `₹${item.price} each`;
+        const qtyLabel = item.unit === 'KG' ? `${item.qty} KG` : `${item.qty}`;
+
         itemsHtml += `
           <div class="cart-item-card">
             <img src="${item.img}" alt="${item.name}" class="cart-item-thumb" />
             <div class="cart-item-info">
               <div class="cart-item-name">${item.name}</div>
-              <div class="cart-item-rate">₹${item.price} each</div>
+              <div class="cart-item-rate">${rateLabel}</div>
             </div>
             <div class="cart-qty-stepper">
               <button type="button" class="cart-qty-btn" onclick="changeCartQty('${key}', -1)" aria-label="Decrease quantity">-</button>
-              <span class="cart-qty-val">${item.qty}</span>
+              <span class="cart-qty-val">${qtyLabel}</span>
               <button type="button" class="cart-qty-btn" onclick="changeCartQty('${key}', 1)" aria-label="Increase quantity">+</button>
             </div>
-            <div class="cart-item-total">₹${itemTotal}</div>
+            <div class="cart-item-total">₹${itemTotal.toLocaleString('en-IN')}</div>
           </div>
         `;
       }
@@ -187,10 +204,15 @@ document.addEventListener('DOMContentLoaded', () => {
         <div style="text-align: center; padding: 40px 10px; color: var(--text-muted);">
           <span class="material-symbols-outlined" style="font-size: 48px; color: var(--secondary); margin-bottom: 8px;">shopping_basket</span>
           <p style="font-weight: 700; font-size: 1rem;">Your Cart is Empty</p>
-          <p style="font-size: 0.85rem; margin-top: 4px;">Choose from our Fresh Oyster or Milky mushrooms to add them here!</p>
-          <button type="button" class="btn-order-primary" onclick="addToCart('oyster', 1)" style="margin: 16px auto 0; font-size: 0.82rem; padding: 8px 16px;">
-            + Add 1 Oyster Pack (₹79)
-          </button>
+          <p style="font-size: 0.85rem; margin-top: 4px;">Choose from our Fresh Mushrooms or Lab-Grade Mushroom Spawn (₹130/KG) to add them here!</p>
+          <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 14px;">
+            <button type="button" class="btn-order-primary" onclick="addToCart('oyster', 1)" style="font-size: 0.8rem; padding: 8px 14px;">
+              + 1 Oyster Pack (₹79)
+            </button>
+            <button type="button" class="btn-order-primary" onclick="addToCart('oyster_spawn', 10)" style="font-size: 0.8rem; padding: 8px 14px; background: var(--tertiary-dark); border: 1px solid var(--secondary); color: var(--secondary-light);">
+              + 10 KG Oyster Spawn (₹1,300)
+            </button>
+          </div>
         </div>
       `;
     }
@@ -198,9 +220,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cartItemsList) cartItemsList.innerHTML = itemsHtml;
     if (cartBadgeCount) cartBadgeCount.textContent = totalItems;
     if (mobileCartBadgeCount) mobileCartBadgeCount.textContent = totalItems;
-    if (cartSubtotalEl) cartSubtotalEl.textContent = `₹${grandTotal}`;
-    if (cartTotalValEl) cartTotalValEl.textContent = `₹${grandTotal}`;
-    if (mobileCartTotalVal) mobileCartTotalVal.textContent = `₹${grandTotal}`;
+    if (cartSubtotalEl) cartSubtotalEl.textContent = `₹${grandTotal.toLocaleString('en-IN')}`;
+    if (cartTotalValEl) cartTotalValEl.textContent = `₹${grandTotal.toLocaleString('en-IN')}`;
+    if (mobileCartTotalVal) mobileCartTotalVal.textContent = `₹${grandTotal.toLocaleString('en-IN')}`;
 
     // Update hero quick order buttons with latest quantities
     const heroOysterQty = cartState.oyster.qty;
@@ -246,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const city = cityInput ? cityInput.value.trim() : "";
     const notes = notesInput ? notesInput.value.trim() : "";
 
-    // Save to localStorage for convenience
+    // Save to localStorage for user convenience
     try {
       localStorage.setItem('anabe_address', JSON.stringify({ name, phone, address, city, notes }));
     } catch (e) {}
@@ -261,12 +283,13 @@ document.addEventListener('DOMContentLoaded', () => {
         totalItems += item.qty;
         const total = item.qty * item.price;
         grandTotal += total;
-        itemsText += `• ${item.name}: ${item.qty} pack(s) = ₹${total}\n`;
+        const unitStr = item.unit === 'KG' ? 'KG' : 'pack(s)';
+        itemsText += `• ${item.name}: ${item.qty} ${unitStr} = ₹${total.toLocaleString('en-IN')}\n`;
       }
     });
 
     if (totalItems === 0) {
-      alert("Please add at least 1 pack of mushrooms to your cart before ordering!");
+      alert("Please add at least 1 pack of mushrooms or 10 KG spawn to your cart before ordering!");
       return null;
     }
 
@@ -327,7 +350,116 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // -------------------------------------------------------------
-  // 6. Interactive Karnataka Hardwood Pellets Bulk Calculator Logic
+  // 5B. Interactive Mushroom Spawn Bulk Calculator Logic (₹130/KG, Min 10 KG)
+  // -------------------------------------------------------------
+  const spawnPresetChips = document.querySelectorAll('.spawn-chip-btn');
+  const spawnQtyInput = document.getElementById('spawn-qty-input');
+  const spawnDistSelect = document.getElementById('spawn-district-select');
+  const spawnVarietySelect = document.getElementById('spawn-variety-select');
+  const calcSpawnOutQty = document.getElementById('calc-spawn-out-qty');
+  const calcSpawnOutBags = document.getElementById('calc-spawn-out-bags');
+  const calcSpawnOutRate = document.getElementById('calc-spawn-out-rate');
+  const calcSpawnOutTotal = document.getElementById('calc-spawn-out-total');
+  const calcSpawnOutSubstrate = document.getElementById('calc-spawn-out-substrate');
+  const calcSpawnOutYield = document.getElementById('calc-spawn-out-yield');
+  const calcSpawnOutDist = document.getElementById('calc-spawn-out-dist');
+  const btnSpawnWaCalc = document.getElementById('btn-spawn-wa-calc');
+
+  function calculateSpawnSpecs() {
+    let qty = 10;
+    if (spawnQtyInput) {
+      qty = parseInt(spawnQtyInput.value, 10);
+      if (isNaN(qty) || qty < 10) qty = 10;
+    }
+
+    const rate = 130;
+    const totalAmount = qty * rate;
+    const bags = qty; // standard 1 KG autoclave filter bags
+    const estSubstrate = qty * 10; // 1 kg spawn inoculates ~10 kg dry substrate
+    const estYieldMin = qty * 10;
+    const estYieldMax = Math.round(qty * 14);
+    const district = spawnDistSelect ? spawnDistSelect.value : "Mysuru";
+
+    if (calcSpawnOutQty) calcSpawnOutQty.textContent = `${qty} KG`;
+    if (calcSpawnOutBags) calcSpawnOutBags.textContent = `${bags} x 1 KG Sterile Filter Bags`;
+    if (calcSpawnOutRate) calcSpawnOutRate.textContent = `₹${rate} / KG`;
+    if (calcSpawnOutTotal) calcSpawnOutTotal.textContent = `₹${totalAmount.toLocaleString('en-IN')}`;
+    if (calcSpawnOutSubstrate) calcSpawnOutSubstrate.textContent = `~${estSubstrate} KG Straw / Pellets`;
+    if (calcSpawnOutYield) calcSpawnOutYield.textContent = `~${estYieldMin} – ${estYieldMax} KG Fresh`;
+    if (calcSpawnOutDist) calcSpawnOutDist.textContent = `${district}, Karnataka`;
+  }
+
+  if (spawnPresetChips.length > 0) {
+    spawnPresetChips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        spawnPresetChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const chipQty = chip.getAttribute('data-qty');
+        if (spawnQtyInput && chipQty) {
+          spawnQtyInput.value = chipQty;
+          calculateSpawnSpecs();
+        }
+      });
+    });
+  }
+
+  if (spawnQtyInput) {
+    spawnQtyInput.addEventListener('input', () => {
+      const currentVal = spawnQtyInput.value;
+      spawnPresetChips.forEach(chip => {
+        if (chip.getAttribute('data-qty') === currentVal) {
+          chip.classList.add('active');
+        } else {
+          chip.classList.remove('active');
+        }
+      });
+      calculateSpawnSpecs();
+    });
+  }
+
+  if (spawnDistSelect) {
+    spawnDistSelect.addEventListener('change', calculateSpawnSpecs);
+  }
+  if (spawnVarietySelect) {
+    spawnVarietySelect.addEventListener('change', calculateSpawnSpecs);
+  }
+
+  if (btnSpawnWaCalc) {
+    btnSpawnWaCalc.addEventListener('click', (e) => {
+      e.preventDefault();
+      let qty = 10;
+      if (spawnQtyInput) {
+        qty = parseInt(spawnQtyInput.value, 10);
+        if (isNaN(qty) || qty < 10) qty = 10;
+      }
+      const rate = 130;
+      const totalAmount = qty * rate;
+      const district = spawnDistSelect ? spawnDistSelect.value : "Mysuru";
+      const variety = spawnVarietySelect ? spawnVarietySelect.value : "Oyster Mushroom Spawn";
+      const estYieldMin = qty * 10;
+      const estYieldMax = Math.round(qty * 14);
+
+      const msg = `*Order / Inquiry: Mushroom Spawn (₹130/KG - Min 10 KG)*\n` +
+                  `-----------------------------------------------------\n` +
+                  `• *Spawn Variety:* ${variety}\n` +
+                  `• *Quantity:* ${qty} KG (${qty} x 1 KG Sterile Autoclave Bags)\n` +
+                  `• *Price per KG:* ₹130 / KG\n` +
+                  `• *Total Estimated Amount:* ₹${totalAmount.toLocaleString('en-IN')}\n` +
+                  `• *Destination District:* ${district}, Karnataka\n` +
+                  `• *Spawn Quality:* 1st Generation Laboratory Grain Culture (100% Contamination Free)\n` +
+                  `• *Est. Mushroom Yield:* ~${estYieldMin} – ${estYieldMax} KG Fresh\n` +
+                  `-----------------------------------------------------\n` +
+                  `Hello Organic Anabe! I would like to order ${qty} KG ${variety} to be delivered to ${district}. Please share dispatch time and payment details. Thank you!`;
+
+      sendDirectWhatsApp(msg, "919591185530");
+    });
+  }
+
+  // Initial spawn calculation
+  calculateSpawnSpecs();
+
+  // -------------------------------------------------------------
+  // 6. Interactive Karnataka All Types Pellets Bulk Calculator Logic
   // -------------------------------------------------------------
   const pelletPresetChips = document.querySelectorAll('.pellet-chip-btn');
   const pelletQtyInput = document.getElementById('pellet-qty-input');

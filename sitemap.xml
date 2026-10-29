@@ -3,15 +3,47 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- 1. Main Home Page (Target: Mysore, Mandya, Hassan, Chamarajanagar & Karnataka) -->
+  <!-- 1. Main Home Page (Target: Mysore, Mandya, Bengaluru, Hassan, Karnataka) -->
   <url>
     <loc>https://organabe.in/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://organabe.in/" />
     <xhtml:link rel="alternate" hreflang="kn" href="https://organabe.in/?lang=kn" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://organabe.in/" />
+
+    <!-- Product Image: Oyster Mushroom Spawn -->
+    <image:image>
+      <image:loc>https://organabe.in/assets/oyster_spawn.jpg</image:loc>
+      <image:title>High Yield Oyster Mushroom Spawn in Karnataka (ಸಿಂಪಿ ಅಣಬೆ ಬೀಜ ₹130/KG)</image:title>
+      <image:caption>Laboratory-grade first-generation pure sorghum grain Oyster mushroom spawn (Pleurotus ostreatus). ₹130/KG with minimum order 10 KG. Fast mycelium colonization across Karnataka.</image:caption>
+      <image:geo_location>Karnataka, India</image:geo_location>
+    </image:image>
+
+    <!-- Product Image: Milky Mushroom Spawn -->
+    <image:image>
+      <image:loc>https://organabe.in/assets/milky_spawn.jpg</image:loc>
+      <image:title>High Temperature Milky Mushroom Spawn in Karnataka (ಹಾಲು ಅಣಬೆ ಬೀಜ ₹130/KG)</image:title>
+      <image:caption>Commercial high-heat tolerant Milky mushroom grain spawn (Calocybe indica). ₹130/KG with minimum order 10 KG. Robust mycelium run dispatched across Karnataka.</image:caption>
+      <image:geo_location>Karnataka, India</image:geo_location>
+    </image:image>
+
+    <!-- Product Image: All Types of Pellets -->
+    <image:image>
+      <image:loc>https://organabe.in/assets/all_types_pellets.jpg</image:loc>
+      <image:title>All Types of Pellets: Hardwood Sawdust &amp; Biomass Wood Pellets Karnataka</image:title>
+      <image:caption>Leading supplier of all types of pellets across Karnataka: 100% pure hardwood mushroom substrate pellets, high-calorific biomass boiler fuel pellets, and sawdust pellets from 30 KG bags to commercial tonnes.</image:caption>
+      <image:geo_location>Karnataka, India</image:geo_location>
+    </image:image>
+
+    <!-- Product Image: Hardwood Pellets for Mushroom Cultivation -->
+    <image:image>
+      <image:loc>https://organabe.in/assets/hardwood_pellets.jpg</image:loc>
+      <image:title>Mushroom Hardwood Pellets in Karnataka (ಹಾರ್ಡ್‌ವುಡ್ ಪೆಲ್ಲೆಟ್‌ಗಳು)</image:title>
+      <image:caption>Pure hardwood sawdust pellets for mushroom cultivation. Minimum order 30 KG up to multiple commercial tonnes, supplied across all 31 districts of Karnataka.</image:caption>
+      <image:geo_location>Karnataka, India</image:geo_location>
+    </image:image>
 
     <!-- Product Image: Fresh Oyster Mushroom -->
     <image:image>
@@ -29,14 +61,6 @@
       <image:geo_location>Mandya, Karnataka, India</image:geo_location>
     </image:image>
 
-    <!-- Product Image: Hardwood Pellets for Mushroom Cultivation -->
-    <image:image>
-      <image:loc>https://organabe.in/assets/hardwood_pellets.jpg</image:loc>
-      <image:title>Mushroom Hardwood Pellets in Karnataka (ಹಾರ್ಡ್‌ವುಡ್ ಪೆಲ್ಲೆಟ್‌ಗಳು)</image:title>
-      <image:caption>Pure hardwood sawdust pellets for mushroom cultivation. Minimum order 30 KG up to multiple commercial tonnes, supplied across all 31 districts of Karnataka.</image:caption>
-      <image:geo_location>Karnataka, India</image:geo_location>
-    </image:image>
-
     <!-- Farm Gallery Images -->
     <image:image>
       <image:loc>https://organabe.in/gallery/founder_grow_room.jpeg</image:loc>
@@ -50,57 +74,80 @@
     </image:image>
   </url>
 
-  <!-- 2. Hardwood Pellets Substrate Section (Karnataka Statewide) -->
+  <!-- 2. Dedicated Mushroom Spawn Section (Oyster & Milky ₹130/KG, Min 10 KG) -->
   <url>
-    <loc>https://organabe.in/#pellets</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <loc>https://organabe.in/#spawn</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.98</priority>
     <image:image>
-      <image:loc>https://organabe.in/assets/hardwood_pellets.jpg</image:loc>
-      <image:title>Hardwood Sawdust Pellets for Mushroom Cultivation in Karnataka</image:title>
-      <image:caption>High-yield hardwood substrate pellets for commercial mushroom growers across Bengaluru, Mysuru, Mandya, Hassan, Shivamogga, and all Karnataka.</image:caption>
+      <image:loc>https://organabe.in/assets/oyster_spawn.jpg</image:loc>
+      <image:title>Pure Oyster Mushroom Spawn ₹130 per KG in Karnataka</image:title>
+      <image:caption>First generation pure sorghum grain Oyster mushroom spawn with high biological efficiency.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://organabe.in/assets/milky_spawn.jpg</image:loc>
+      <image:title>Pure Milky Mushroom Spawn ₹130 per KG in Karnataka</image:title>
+      <image:caption>High temperature resistant commercial Milky mushroom spawn with meaty yields.</image:caption>
     </image:image>
   </url>
 
-  <!-- 3. Gourmet Mushroom Recipes Page -->
+  <!-- 3. All Types of Pellets: Hardwood & Biomass Wood Pellets (Karnataka Statewide) -->
+  <url>
+    <loc>https://organabe.in/#pellets</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://organabe.in/assets/all_types_pellets.jpg</image:loc>
+      <image:title>All Types of Pellets Supplier in Karnataka - Substrate &amp; Biomass</image:title>
+      <image:caption>Hardwood sawdust pellets for mushroom cultivation and biomass fuel wood pellets for industrial heating across Bengaluru, Mysuru, Mandya, Hassan, Belagavi, and all Karnataka.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://organabe.in/assets/hardwood_pellets.jpg</image:loc>
+      <image:title>Hardwood Sawdust Pellets for Mushroom Cultivation in Karnataka</image:title>
+      <image:caption>High-yield hardwood substrate pellets for commercial mushroom growers across Karnataka.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 4. Gourmet Mushroom Recipes Page -->
   <url>
     <loc>https://organabe.in/recipes.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://organabe.in/recipes.html" />
     <xhtml:link rel="alternate" hreflang="kn" href="https://organabe.in/recipes.html?lang=kn" />
   </url>
 
-  <!-- 4. Health Benefits of Oyster and Milky Mushrooms -->
+  <!-- 5. Health Benefits of Oyster and Milky Mushrooms -->
   <url>
     <loc>https://organabe.in/#benefits</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 5. About Organic Anabe Farm & Founders -->
+  <!-- 6. About Organic Anabe Farm & Founders -->
   <url>
     <loc>https://organabe.in/#about</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- 6. Real Farm Photo Gallery -->
+  <!-- 7. Real Farm Photo Gallery -->
   <url>
     <loc>https://organabe.in/#gallery</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 7. Direct Contact & WhatsApp Order (Mysore, Mandya, Karnataka) -->
+  <!-- 8. Direct Contact & WhatsApp Order (Mysore, Mandya, Karnataka) -->
   <url>
     <loc>https://organabe.in/#contact</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
