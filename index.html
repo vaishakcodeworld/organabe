@@ -294,7 +294,7 @@
   }
   </script>
 
-  <!-- Structured Data: Standalone Product Schemas for Rich SERP Snippets -->
+  <!-- Structured Data: Standalone Product Schemas for Rich SERP Snippets & Google Merchant Listings -->
   <script type="application/ld+json">
   [
     {
@@ -309,6 +309,7 @@
         "@type": "Offer",
         "price": "130",
         "priceCurrency": "INR",
+        "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
         "priceValidUntil": "2027-12-31",
         "url": "https://organabe.in/#spawn",
@@ -316,6 +317,54 @@
           "@type": "QuantitativeValue",
           "minValue": 10,
           "unitCode": "KGM"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "INR"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IN",
+            "addressRegion": "Karnataka"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IN",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 7,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Suresh Gowda"
         }
       },
       "aggregateRating": {
@@ -336,6 +385,7 @@
         "@type": "Offer",
         "price": "130",
         "priceCurrency": "INR",
+        "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
         "priceValidUntil": "2027-12-31",
         "url": "https://organabe.in/#spawn",
@@ -343,6 +393,54 @@
           "@type": "QuantitativeValue",
           "minValue": 10,
           "unitCode": "KGM"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "INR"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IN",
+            "addressRegion": "Karnataka"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IN",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 7,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Manjunath Patil"
         }
       },
       "aggregateRating": {
@@ -360,13 +458,61 @@
       "sku": "OA-PELLET-30KG",
       "brand": { "@type": "Brand", "name": "Organic Anabe" },
       "offers": {
-        "@type": "AggregateOffer",
-        "lowPrice": "15",
-        "highPrice": "28",
+        "@type": "Offer",
+        "price": "18",
         "priceCurrency": "INR",
-        "offerCount": "10",
+        "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock",
-        "url": "https://organabe.in/#pellets"
+        "priceValidUntil": "2027-12-31",
+        "url": "https://organabe.in/#pellets",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "INR"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IN",
+            "addressRegion": "Karnataka"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IN",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 7,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        }
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Anand Hegde"
+        }
       },
       "aggregateRating": {
         "@type": "AggregateRating",
