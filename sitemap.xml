@@ -74,7 +74,44 @@
     </image:image>
   </url>
 
-  <!-- 2. Kannada Language Home Page -->
+  <!-- 2. Dedicated Mushroom Spawn Page (Oyster & Milky ₹130/KG, Min 10 KG) -->
+  <url>
+    <loc>https://organabe.in/spawn.html</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://organabe.in/spawn.html" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://organabe.in/spawn.html?lang=kn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://organabe.in/spawn.html" />
+    <image:image>
+      <image:loc>https://organabe.in/assets/oyster_spawn.jpg</image:loc>
+      <image:title>Pure Oyster Mushroom Spawn ₹130 per KG in Karnataka</image:title>
+      <image:caption>First generation pure sorghum grain Oyster mushroom spawn with high biological efficiency.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://organabe.in/assets/milky_spawn.jpg</image:loc>
+      <image:title>Pure Milky Mushroom Spawn ₹130 per KG in Karnataka</image:title>
+      <image:caption>High temperature resistant commercial Milky mushroom spawn with meaty yields.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 3. Dedicated All Types of Pellets Page (Hardwood & Biomass Wood Pellets) -->
+  <url>
+    <loc>https://organabe.in/pellets.html</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://organabe.in/pellets.html" />
+    <xhtml:link rel="alternate" hreflang="kn" href="https://organabe.in/pellets.html?lang=kn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://organabe.in/pellets.html" />
+    <image:image>
+      <image:loc>https://organabe.in/assets/all_types_pellets.jpg</image:loc>
+      <image:title>All Types of Pellets Supplier in Karnataka - Substrate &amp; Biomass</image:title>
+      <image:caption>Hardwood sawdust pellets for mushroom cultivation and biomass fuel wood pellets for industrial heating across Bengaluru, Mysuru, Mandya, Hassan, Belagavi, and all Karnataka.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 4. Kannada Language Home Page -->
   <url>
     <loc>https://organabe.in/?lang=kn</loc>
     <lastmod>2026-10-29</lastmod>
@@ -85,7 +122,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://organabe.in/" />
   </url>
 
-  <!-- 3. Gourmet Mushroom Recipes Page -->
+  <!-- 5. Gourmet Mushroom Recipes Page -->
   <url>
     <loc>https://organabe.in/recipes.html</loc>
     <lastmod>2026-10-29</lastmod>

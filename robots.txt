@@ -7,4 +7,18 @@ Allow: /
 User-agent: Googlebot-Image
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://organabe.in/sitemap.xml
+# LLM knowledge specification
+# https://organabe.in/llms.txt
