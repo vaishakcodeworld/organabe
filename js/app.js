@@ -231,6 +231,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroMilkyQtyEl = document.getElementById('hero-milky-qty');
     if (heroOysterQtyEl) heroOysterQtyEl.textContent = heroOysterQty;
     if (heroMilkyQtyEl) heroMilkyQtyEl.textContent = heroMilkyQty;
+
+    // Toggle Fresh Mushroom Mysore/Mandya delivery restriction notice
+    const freshNoteEl = document.getElementById('fresh-mushroom-restriction-note');
+    const hasFresh = (cartState.oyster && cartState.oyster.qty > 0) || (cartState.milky && cartState.milky.qty > 0);
+    if (freshNoteEl) {
+      freshNoteEl.style.display = hasFresh ? 'block' : 'none';
+    }
   }
 
   function openCart() {
@@ -301,6 +308,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const isKn = currentLang === 'kn';
+
+    // Strict Fresh Mushroom Location Check (Mysore & Mandya ONLY)
+    const hasFreshMushrooms = (cartState.oyster && cartState.oyster.qty > 0) || (cartState.milky && cartState.milky.qty > 0);
+    const cleanCity = (city || '').toLowerCase();
+    const isMysoreOrMandya = cleanCity.includes('mysore') || 
+                             cleanCity.includes('mysuru') || 
+                             cleanCity.includes('mandya') ||
+                             cleanCity.includes('ಮೈಸೂರು') ||
+                             cleanCity.includes('ಮಂಡ್ಯ');
+
+    if (hasFreshMushrooms && !isMysoreOrMandya) {
+      const msg = isKn 
+        ? "⚠️ ಕ್ಷಮಿಸಿ! ತಾಜಾ ಸಾವಯವ ಅಣಬೆಗಳನ್ನು (Fresh Mushrooms) ಗರಿಷ್ಠ ತಾಜಾತನಕ್ಕಾಗಿ ಕೇವಲ ಮೈಸೂರು ಮತ್ತು ಮಂಡ್ಯ ನಗರದ ವ್ಯಾಪ್ತಿಯಲ್ಲಿ ಮಾತ್ರ ತಲುಪಿಸಲಾಗುತ್ತದೆ. ಇತರ ಊರುಗಳಿಗೆ ತಾಜಾ ಅಣಬೆಗಳ ಆರ್ಡರ್ ಸ್ವೀಕರಿಸಲಾಗುವುದಿಲ್ಲ.\n\n(ಗಮನಿಸಿ: ಅಣಬೆ ಬೀಜ / Mushroom Spawn ಮತ್ತು ಪೆಲ್ಲೆಟ್‌ಗಳನ್ನು ಮಾತ್ರ ಸಮಗ್ರ ಕರ್ನಾಟಕದ ಎಲ್ಲಾ ಜಿಲ್ಲೆಗಳಿಗೆ ತಲುಪಿಸಲಾಗುತ್ತದೆ).\n\nದಯವಿಟ್ಟು ನಿಮ್ಮ ಡೆಲಿವರಿ ಸ್ಥಳವನ್ನು ಮೈಸೂರು ಅಥವಾ ಮಂಡ್ಯ ಎಂದು ಆಯ್ಕೆಮಾಡಿ, ಅಥವಾ ಕಾರ್ಟ್‌ನಿಂದ ತಾಜಾ ಅಣಬೆಗಳನ್ನು ತೆಗೆದುಹಾಕಿ."
+        : "⚠️ Fresh Mushroom Delivery Alert!\n\nFresh organic mushrooms are harvested at dawn and delivered EXCLUSIVELY to Mysore and Mandya only to preserve 100% same-day freshness. We do NOT accept fresh mushroom orders for other cities/districts.\n\n(Note: Mushroom Spawn and Pellets ARE delivered statewide across all 31 Karnataka districts!).\n\nPlease select Mysore or Mandya as your delivery location, or remove fresh mushrooms from your cart to proceed with Spawn/Pellets.";
+      alert(msg);
+      if (cityInput) cityInput.focus();
+      return null;
+    }
     let slip = "";
 
     if (isKn) {
