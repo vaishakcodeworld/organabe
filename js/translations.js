@@ -28,8 +28,8 @@ const translations = {
 
     // Hero Section
     hero_badge: "🌱 100% Organic & Chemical-Free • Daily Morning Harvest",
-    hero_title: "Pellets, Spawn, Oyster Mushroom Spawn & Milky Mushroom Spawn - Direct Farm Supply",
-    hero_subtitle: "Karnataka's #1 Certified Producer of All Types of Pellets (Substrate, Hardwood & Biomass Fuel) and Lab-Grade Pure Mushroom Spawn (Fresh Oyster & Milky Spawn @ ₹130/KG, Min 10KG). Fresh daily harvest delivered directly from our farm.",
+    hero_title: "Fresh, Tasty & Organic Mushrooms Delivered to Your Home",
+    hero_subtitle: "Karnataka's trusted farm-fresh Oyster & Milky mushrooms, certified pure laboratory grain spawn (₹130/KG), and chemical-free hardwood sawdust pellets. Direct from farm to you.",
     hero_trust_1: "0% Chemicals or Sprays",
     hero_trust_2: "Harvested Daily at Dawn",
     hero_trust_3: "Direct Farm-to-Home Delivery",
@@ -176,8 +176,8 @@ const translations = {
     btn_price_nav: "₹79 / 200 ಗ್ರಾಂ",
 
     hero_badge: "🌱 100% ಸಾವಯವ & ನೈಸರ್ಗಿಕ • ಮುಂಜಾನೆಯ ತಾಜಾ ಕೊಯ್ಲು",
-    hero_title: "ಪೆಲ್ಲೆಟ್‌ಗಳು, ಅಣಬೆ ಬೀಜ (Spawn), ಸಿಂಪಿ ಮತ್ತು ಹಾಲು ಅಣಬೆ ಬೀಜ ನೇರ ಪೂರೈಕೆ",
-    hero_subtitle: "ಕರ್ನಾಟಕದ ನಂ.1 ಲ್ಯಾಬ್-ದೃಢೀಕೃತ ಅಣಬೆ ಬೀಜ (ಸಿಂಪಿ & ಹಾಲು ಅಣಬೆ ಬೀಜ ₹130/ಕೆಜಿ, ಕನಿಷ್ಠ 10 ಕೆಜಿ) ಮತ್ತು ಎಲ್ಲಾ ರೀತಿಯ ಮರದ ಪೆಲ್ಲೆಟ್‌ಗಳ ನೇರ ಪೂರೈಕೆದಾರರು.",
+    hero_title: "ತಾಜಾ, ರುಚಿಕರ ಹಾಗೂ ಸಾವಯವ ಅಣಬೆಗಳು ನಿಮ್ಮ ಮನೆ ಬಾಗಿಲಿಗೆ",
+    hero_subtitle: "ಕರ್ನಾಟಕದ ನಂ.1 ಪ್ರಮಾಣೀಕೃತ ತೋಟ: ತಾಜಾ ಅಣಬೆಗಳು, ಲ್ಯಾಬ್-ಪ್ರಮಾಣೀಕೃತ ಅಣಬೆ ಬೀಜ (₹130/ಕೆಜಿ), ಮತ್ತು ನೈಸರ್ಗಿಕ ಹಾರ್ಡ್‌ವುಡ್ ಪೆಲ್ಲೆಟ್‌ಗಳು.",
     hero_trust_1: "0% ರಾಸಾಯನಿಕ ಅಥವಾ ಕ್ರಿಮಿನಾಶಕ",
     hero_trust_2: "ಮುಂಜಾನೆ 5:30 ರ ತಾಜಾ ಕೊಯ್ಲು",
     hero_trust_3: "ತೋಟದಿಂದ ನೇರ ಮನೆಗೆ ತಲುಪಿಸುವಿಕೆ",
