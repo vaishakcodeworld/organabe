@@ -364,8 +364,8 @@
       "@type": "Product",
       "name": "All Types of Pellets: Hardwood Sawdust & Biomass Pellets (ಪೆಲ್ಲೆಟ್‌ಗಳು)",
       "image": "https://organabe.in/assets/all_types_pellets.jpg",
-      "description": "100% pure broadleaf hardwood substrate pellets for mushroom cultivation and high-calorific biomass fuel wood pellets for industrial boilers. Available in 30 KG bags to bulk tonnes.",
-      "sku": "OA-PELLET-30KG",
+      "description": "100% pure broadleaf hardwood substrate pellets for mushroom cultivation and high-calorific biomass fuel wood pellets for industrial boilers. Available in 100 KG bags to bulk tonnes.",
+      "sku": "OA-PELLET-100KG",
       "brand": { "@type": "Brand", "name": "Organic Anabe" },
       "offers": {
         "@type": "Offer",
@@ -460,7 +460,7 @@
         "name": "What are all the types of pellets available at Organic Anabe?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Organic Anabe supplies all types of pellets across Karnataka: 1) 100% pure chemical-free Broadleaf Hardwood Sawdust Pellets (Oak, Beech, Rubberwood) for gourmet mushroom cultivation substrates; 2) High-calorific Biomass Wood Fuel Pellets for industrial boilers, furnaces, and heating; and 3) High-density Sawdust Pellets for animal bedding and auxiliary combustion. Supplied from 30 KG trial bags up to multiple commercial tonnes."
+          "text": "Organic Anabe supplies all types of pellets across Karnataka: 1) 100% pure chemical-free Broadleaf Hardwood Sawdust Pellets (Oak, Beech, Rubberwood) for gourmet mushroom cultivation substrates; 2) High-calorific Biomass Wood Fuel Pellets for industrial boilers, furnaces, and heating; and 3) High-density Sawdust Pellets for animal bedding and auxiliary combustion. Supplied from 100 KG bags up to multiple commercial tonnes."
         }
       },
       {
@@ -477,7 +477,7 @@
         "name": "What is the minimum order quantity for mushroom spawn and pellets?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For Mushroom Spawn (both Oyster and Milky varieties), the minimum order quantity is 10 KG (which can be split 50:50 between Oyster and Milky upon request). For Pellets, the minimum order quantity is 30 KG in heavy moisture-protected sacks, scaling up to commercial truckloads across Karnataka."
+          "text": "For Mushroom Spawn (both Oyster and Milky varieties), the minimum order quantity is 10 KG (which can be split 50:50 between Oyster and Milky upon request). For Pellets, the minimum order quantity is 100 KG in heavy moisture-protected sacks, scaling up to commercial truckloads across Karnataka."
         }
       },
       {
@@ -1124,138 +1124,32 @@
         </div>
       </div>
 
-      <!-- Interactive Mushroom Spawn Bulk Calculator -->
-      <div class="dist-calculator-box" id="spawn-calc-container">
-        <div class="pellet-calc-header">
-          <div class="dist-order-range-pill" style="display: inline-block;">
-            <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">calculate</span>
-            Mushroom Spawn (₹130/KG • Min 10 KG) Calculator
-          </div>
-          <h3 class="pellet-calc-title">Instant Spawn Order & Substrate Estimator</h3>
-          <p class="pellet-calc-sub">
-            Select your required spawn quantity and variety to calculate total price, bags count, estimated substrate needed, and expected fresh mushroom yield.
-          </p>
+      <!-- Spawn Price & Direct Order Action Box -->
+      <div class="spawn-order-banner" style="max-width: 920px; margin: 36px auto 0; background: var(--surface-card); border: 1.5px solid var(--secondary); border-radius: var(--radius-xl); padding: 28px 32px; box-shadow: var(--shadow-md); text-align: center;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(197, 160, 89, 0.15); border: 1px solid var(--secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: 0.82rem; font-weight: 700; color: var(--primary); margin-bottom: 12px;">
+          <span class="material-symbols-outlined" style="font-size: 18px; color: var(--secondary-hover);">verified</span>
+          <span>1st-Generation Laboratory Certified Pure Grain Spawn</span>
         </div>
-
-        <div class="pellet-calc-grid">
-          <!-- Left: Form -->
-          <div class="pellet-calc-form">
-            <div>
-              <label class="pellet-input-label">
-                <span class="material-symbols-outlined" style="font-size: 16px;">scale</span>
-                Select Spawn Quantity (Minimum 10 KG)
-              </label>
-              <div class="pellet-preset-chips" id="spawn-preset-chips">
-                <button type="button" class="pellet-chip-btn spawn-chip-btn active" data-qty="10">10 KG (Min Order)</button>
-                <button type="button" class="pellet-chip-btn spawn-chip-btn" data-qty="20">20 KG (20 Bags)</button>
-                <button type="button" class="pellet-chip-btn spawn-chip-btn" data-qty="30">30 KG (30 Bags)</button>
-                <button type="button" class="pellet-chip-btn spawn-chip-btn" data-qty="50">50 KG (Farm Pack)</button>
-                <button type="button" class="pellet-chip-btn spawn-chip-btn" data-qty="100">100 KG (Bulk)</button>
-                <button type="button" class="pellet-chip-btn spawn-chip-btn" data-qty="200">200 KG (Commercial)</button>
-              </div>
-              <div class="pellet-custom-qty-row">
-                <span style="font-size: 0.82rem; color: rgba(255,255,255,0.7);">Or Enter Exact Spawn KG:</span>
-                <input type="number" id="spawn-qty-input" class="pellet-qty-input" min="10" step="1" value="10" />
-                <span style="color: #ffffff; font-weight: 700; font-size: 0.9rem;">KG</span>
-              </div>
-            </div>
-
-            <div>
-              <label class="pellet-input-label" for="spawn-variety-select">
-                <span class="material-symbols-outlined" style="font-size: 16px;">spa</span>
-                Select Spawn Variety
-              </label>
-              <select id="spawn-variety-select" class="pellet-select">
-                <option value="Oyster Mushroom Spawn (Pleurotus ostreatus)">Oyster Mushroom Spawn (Pleurotus ostreatus / ಸಿಂಪಿ ಅಣಬೆ ಬೀಜ)</option>
-                <option value="Milky Mushroom Spawn (Calocybe indica)">Milky Mushroom Spawn (Calocybe indica / ಹಾಲು ಅಣಬೆ ಬೀಜ)</option>
-                <option value="50:50 Mixed (Half Oyster + Half Milky)">50:50 Mixed Combo (Half Oyster + Half Milky)</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="pellet-input-label" for="spawn-district-select">
-                <span class="material-symbols-outlined" style="font-size: 16px;">location_on</span>
-                Select Karnataka Delivery District
-              </label>
-              <select id="spawn-district-select" class="pellet-select">
-                <option value="Mysuru">Mysuru (ಮೈಸೂರು)</option>
-                <option value="Mandya">Mandya (ಮಂಡ್ಯ)</option>
-                <option value="Bengaluru Urban">Bengaluru Urban (ಬೆಂಗಳೂರು ನಗರ)</option>
-                <option value="Bengaluru Rural">Bengaluru Rural (ಬೆಂಗಳೂರು ಗ್ರಾಮಾಂತರ)</option>
-                <option value="Hassan">Hassan (ಹಾಸನ)</option>
-                <option value="Chamarajanagar">Chamarajanagar (ಚಾಮರಾಜನಗರ)</option>
-                <option value="Shivamogga">Shivamogga (ಶಿವಮೊಗ್ಗ)</option>
-                <option value="Mangaluru / Dakshina Kannada">Mangaluru / Dakshina Kannada (ಮಂಗಳೂರು)</option>
-                <option value="Udupi">Udupi (ಉಡುಪಿ)</option>
-                <option value="Tumakuru">Tumakuru (ತುಮಕೂರು)</option>
-                <option value="Belagavi">Belagavi (ಬೆಳಗಾವಿ)</option>
-                <option value="Hubballi-Dharwad">Hubballi-Dharwad (ಹುಬ್ಬಳ್ಳಿ-ಧಾರವಾಡ)</option>
-                <option value="Davanagere">Davanagere (ದಾವಣಗೆರೆ)</option>
-                <option value="Ballari">Ballari (ಬಳ್ಳಾರಿ)</option>
-                <option value="Kalaburagi">Kalaburagi (ಕಲಬುರಗಿ)</option>
-                <option value="Other Karnataka / South India">Other Karnataka / South India</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Right: Summary Card -->
-          <div class="pellet-calc-result">
-            <div>
-              <div class="pellet-result-title">
-                <span class="material-symbols-outlined" style="font-size: 18px;">receipt_long</span>
-                Live Spawn Order Estimate
-              </div>
-              <div class="pellet-result-rows">
-                <div class="pellet-result-row">
-                  <span class="pellet-result-lbl">Spawn Volume:</span>
-                  <span class="pellet-result-val" id="calc-spawn-out-qty">10 KG</span>
-                </div>
-                <div class="pellet-result-row">
-                  <span class="pellet-result-lbl">Price Rate:</span>
-                  <span class="pellet-result-val" id="calc-spawn-out-rate" style="color: var(--secondary-light);">₹130 / KG</span>
-                </div>
-                <div class="pellet-result-row">
-                  <span class="pellet-result-lbl">Total Estimated Amount:</span>
-                  <span class="pellet-result-val" id="calc-spawn-out-total" style="color: var(--secondary-fixed); font-size: 1.15rem;">₹1,300</span>
-                </div>
-                <div class="pellet-result-row">
-                  <span class="pellet-result-lbl">Packaging:</span>
-                  <span class="pellet-result-val" id="calc-spawn-out-bags">10 x 1 KG Sterile Filter Bags</span>
-                </div>
-                <div class="pellet-result-row">
-                  <span class="pellet-result-lbl">Inoculates Substrate:</span>
-                  <span class="pellet-result-val" id="calc-spawn-out-substrate">~100 KG Straw / Pellets</span>
-                </div>
-                <div class="pellet-result-row">
-                  <span class="pellet-result-lbl">Est. Fresh Mushroom Yield:</span>
-                  <span class="pellet-result-val" id="calc-spawn-out-yield" style="color: var(--secondary-light);">~100 – 140 KG Fresh</span>
-                </div>
-                <div class="pellet-result-row" style="border-bottom: none;">
-                  <span class="pellet-result-lbl">Delivery Destination:</span>
-                  <span class="pellet-result-val" id="calc-spawn-out-dist">Mysuru, Karnataka</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pellet-calc-actions">
-              <button type="button" class="btn-pellet-wa-quote" id="btn-spawn-wa-calc">
-                <span class="material-symbols-outlined" style="font-size: 20px;">chat</span>
-                <span data-i18n="btn_spawn_quote">Order Mushroom Spawn on WhatsApp (₹130/KG)</span>
-              </button>
-              <a href="tel:9591185530" class="btn-pellet-call-quote">
-                <span class="material-symbols-outlined" style="font-size: 18px;">call</span>
-                <span>Call Spawn Specialist: 9591185530</span>
-              </a>
-            </div>
-          </div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary); margin-bottom: 8px;">
+          Oyster &amp; Milky Mushroom Spawn • ₹130 / KG
+        </h3>
+        <p style="font-size: 0.95rem; color: var(--text-muted); max-width: 680px; margin: 0 auto 20px;">
+          Supplied in sterile 1 KG microporous filter patch bags. Minimum order <strong>10 KG (₹1,300)</strong>. Order pure Oyster, pure Milky, or a 50:50 combo with express doorstep dispatch across all 31 Karnataka districts.
+        </p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://api.whatsapp.com/send?phone=919591185530&text=Hello%20Organic%20Anabe!%20I%20would%20like%20to%20order%20Mushroom%20Spawn%20(10%20KG%20@%20%E2%82%B9130/KG%20=%20%E2%82%B91,300).%20Please%20confirm%20dispatch." target="_blank" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; background: #25d366; color: #ffffff; box-shadow: 0 4px 14px rgba(37,211,102,0.3);">
+            <span class="material-symbols-outlined" style="font-size: 20px;">chat</span>
+            <span>Order 10 KG Spawn on WhatsApp (₹1,300)</span>
+          </a>
+          <a href="tel:9591185530" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; background: var(--primary); color: #ffffff; border: 1px solid var(--secondary); box-shadow: var(--shadow-sm);">
+            <span class="material-symbols-outlined" style="font-size: 20px;">call</span>
+            <span>Call: 9591185530</span>
+          </a>
+          <a href="spawn.html" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; background: var(--surface-low); color: var(--primary); border: 1px solid var(--surface-border);">
+            <span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+            <span>View Dedicated Spawn Page ➔</span>
+          </a>
         </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 32px;">
-        <a href="spawn.html" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; background: var(--gradient-primary); color: #ffffff; box-shadow: var(--shadow-md);">
-          <span class="material-symbols-outlined">science</span>
-          <span>View Mushroom Spawn Varieties &amp; Details ➔</span>
-        </a>
       </div>
     </section>
 
@@ -1277,7 +1171,7 @@
           All Types of Pellets: Premium Mushroom Hardwood & Biomass Pellets <span>(ಪೆಲ್ಲೆಟ್‌ಗಳು)</span>
         </h2>
         <p class="dist-desc" data-i18n="pellets_desc">
-          100% natural, chemical-free compressed hardwood sawdust pellets, biomass heating pellets, and mushroom cultivation substrates. Supplied across Karnataka and India in 30 KG bags to commercial tonnes.
+          100% natural, chemical-free compressed hardwood sawdust pellets, biomass heating pellets, and mushroom cultivation substrates. Supplied across Karnataka and India in 100 KG bags to commercial tonnes.
         </p>
       </div>
 
@@ -1317,7 +1211,7 @@
               <span class="material-symbols-outlined">local_shipping</span>
             </div>
             <div>
-              <div class="dist-perk-title" data-i18n="pellets_perk_3_title">From 30 KG Bags to Commercial Tonnes</div>
+              <div class="dist-perk-title" data-i18n="pellets_perk_3_title">From 100 KG Bags to Commercial Tonnes</div>
               <p class="dist-perk-desc" data-i18n="pellets_perk_3_desc">
                 Packed in sturdy moisture-protected sacks. Convenient supply for home growers, commercial farms, and agricultural units across Karnataka.
               </p>
@@ -1326,136 +1220,32 @@
         </div>
       </div>
 
-      <!-- Interactive Karnataka Hardwood Pellets Bulk Calculator -->
-      <div class="dist-calculator-box" id="pellet-calc-container">
-        <div class="pellet-calc-header">
-          <div class="dist-order-range-pill" style="display: inline-block;">
-            <span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px;">calculate</span>
-            Karnataka Hardwood Pellets Bulk Calculator
-          </div>
-          <h3 class="pellet-calc-title">Instant Wholesale Quote & Bag Estimator</h3>
-          <p class="pellet-calc-sub">
-            Select your required volume and delivery district in Karnataka to calculate bag packaging, estimated mushroom yield, and request an instant dispatch quote.
-          </p>
+      <!-- Pellets Price & Direct Order Action Box -->
+      <div class="pellet-order-banner" style="max-width: 920px; margin: 36px auto 0; background: var(--surface-card); border: 1.5px solid var(--secondary); border-radius: var(--radius-xl); padding: 28px 32px; box-shadow: var(--shadow-md); text-align: center;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(197, 160, 89, 0.15); border: 1px solid var(--secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: 0.82rem; font-weight: 700; color: var(--primary); margin-bottom: 12px;">
+          <span class="material-symbols-outlined" style="font-size: 18px; color: var(--secondary-hover);">forest</span>
+          <span>Wholesale Factory Direct Supply • Minimum Order 100 KG</span>
         </div>
-
-        <div class="pellet-calc-grid">
-          <!-- Left: User Selection Form -->
-          <div class="pellet-calc-form">
-            <div>
-              <label class="pellet-input-label">
-                <span class="material-symbols-outlined" style="font-size: 16px;">scale</span>
-                Select Order Quantity (Min 30 KG)
-              </label>
-              <div class="pellet-preset-chips" id="pellet-preset-chips">
-                <button type="button" class="pellet-chip-btn active" data-qty="30">30 KG (1 Bag)</button>
-                <button type="button" class="pellet-chip-btn" data-qty="60">60 KG (2 Bags)</button>
-                <button type="button" class="pellet-chip-btn" data-qty="150">150 KG (5 Bags)</button>
-                <button type="button" class="pellet-chip-btn" data-qty="500">500 KG (0.5 Tonne)</button>
-                <button type="button" class="pellet-chip-btn" data-qty="1000">1000 KG (1 Tonne)</button>
-                <button type="button" class="pellet-chip-btn" data-qty="3000">3000 KG (Truckload)</button>
-              </div>
-              <div class="pellet-custom-qty-row">
-                <span style="font-size: 0.82rem; color: rgba(255,255,255,0.7);">Or Enter Exact KG:</span>
-                <input type="number" id="pellet-qty-input" class="pellet-qty-input" min="30" step="10" value="30" />
-                <span style="color: #ffffff; font-weight: 700; font-size: 0.9rem;">KG</span>
-              </div>
-            </div>
-
-            <div>
-              <label class="pellet-input-label" for="pellet-district-select">
-                <span class="material-symbols-outlined" style="font-size: 16px;">location_on</span>
-                Select Karnataka Delivery District
-              </label>
-              <select id="pellet-district-select" class="pellet-select">
-                <option value="Mysuru">Mysuru (ಮೈಸೂರು)</option>
-                <option value="Mandya">Mandya (ಮಂಡ್ಯ)</option>
-                <option value="Bengaluru Urban">Bengaluru Urban (ಬೆಂಗಳೂರು ನಗರ)</option>
-                <option value="Bengaluru Rural">Bengaluru Rural (ಬೆಂಗಳೂರು ಗ್ರಾಮಾಂತರ)</option>
-                <option value="Hassan">Hassan (ಹಾಸನ)</option>
-                <option value="Chamarajanagar">Chamarajanagar (ಚಾಮರಾಜನಗರ)</option>
-                <option value="Shivamogga">Shivamogga (ಶಿವಮೊಗ್ಗ)</option>
-                <option value="Mangaluru / Dakshina Kannada">Mangaluru / Dakshina Kannada (ಮಂಗಳೂರು)</option>
-                <option value="Udupi">Udupi (ಉಡುಪಿ)</option>
-                <option value="Tumakuru">Tumakuru (ತುಮಕೂರು)</option>
-                <option value="Belagavi">Belagavi (ಬೆಳಗಾವಿ)</option>
-                <option value="Hubballi-Dharwad">Hubballi-Dharwad (ಹುಬ್ಬಳ್ಳಿ-ಧಾರವಾಡ)</option>
-                <option value="Davanagere">Davanagere (ದಾವಣಗೆರೆ)</option>
-                <option value="Ballari">Ballari (ಬಳ್ಳಾರಿ)</option>
-                <option value="Kalaburagi">Kalaburagi (ಕಲಬುರಗಿ)</option>
-                <option value="Other Karnataka District">Other Karnataka District</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="pellet-input-label" for="pellet-variety-select">
-                <span class="material-symbols-outlined" style="font-size: 16px;">spa</span>
-                Select Pellets Type &amp; Intended Use
-              </label>
-              <select id="pellet-variety-select" class="pellet-select">
-                <option value="Mushroom Substrate Hardwood Pellets (Pure Oak/Beech)">Mushroom Cultivation Hardwood Pellets (Pure Oak &amp; Beech)</option>
-                <option value="Biomass Wood Fuel Pellets (Boilers & Heating)">Biomass Wood Fuel Pellets (Clean Boiler &amp; Industrial Heating)</option>
-                <option value="Pure Sawdust Pellets (Commercial Tonnes)">Pure Compressed Sawdust Pellets (Bulk Commercial Tonnes)</option>
-                <option value="Oyster & Milky Substrate Pellets">Oyster &amp; Milky Mushroom Substrate Pellets</option>
-                <option value="Shiitake / King Oyster Hardwood Pellets">Shiitake, King Oyster &amp; Lion's Mane Hardwood Pellets</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Right: Live Dynamic Summary & WhatsApp Quote CTA -->
-          <div class="pellet-calc-result">
-            <div>
-              <div class="pellet-result-title">
-                <span class="material-symbols-outlined" style="font-size: 18px;">receipt_long</span>
-                Live Order Specification
-              </div>
-              <div class="pellet-result-rows">
-                <div class="pellet-result-row">
-                  <span class="pellet-result-lbl">Order Volume:</span>
-                  <span class="pellet-result-val" id="calc-out-qty">30 KG</span>
-                </div>
-                <div class="pellet-result-row">
-                  <span class="pellet-result-lbl">Packaging:</span>
-                  <span class="pellet-result-val" id="calc-out-bags">1 x 30 KG Heavy Sack</span>
-                </div>
-                <div class="pellet-result-row">
-                  <span class="pellet-result-lbl">Substrate Composition:</span>
-                  <span class="pellet-result-val">100% Pure Hardwood (0% Chemicals)</span>
-                </div>
-                <div class="pellet-result-row">
-                  <span class="pellet-result-lbl">Est. Fresh Mushroom Yield:</span>
-                  <span class="pellet-result-val" id="calc-out-yield" style="color: var(--secondary-light);">~45 – 60 KG Fresh</span>
-                </div>
-                <div class="pellet-result-row">
-                  <span class="pellet-result-lbl">Destination District:</span>
-                  <span class="pellet-result-val" id="calc-out-dist">Mysuru, Karnataka</span>
-                </div>
-                <div class="pellet-result-row" style="border-bottom: none;">
-                  <span class="pellet-result-lbl">Logistics Dispatch:</span>
-                  <span class="pellet-result-val">Statewide Express Transport</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pellet-calc-actions">
-              <button type="button" class="btn-pellet-wa-quote" id="btn-pellet-wa-calc">
-                <span class="material-symbols-outlined" style="font-size: 20px;">chat</span>
-                <span>Get Instant Quote via WhatsApp</span>
-              </button>
-              <a href="tel:7975210984" class="btn-pellet-call-quote">
-                <span class="material-symbols-outlined" style="font-size: 18px;">call</span>
-                <span>Call Vaishak (Bulk Line): 7975210984</span>
-              </a>
-            </div>
-          </div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary); margin-bottom: 8px;">
+          Broadleaf Hardwood &amp; Biomass Fuel Pellets Wholesale
+        </h3>
+        <p style="font-size: 0.95rem; color: var(--text-muted); max-width: 680px; margin: 0 auto 20px;">
+          100% natural chemical-free broadleaf hardwood substrate pellets for mushroom cultivation and high-calorific heating pellets. Minimum order <strong>100 KG</strong> in moisture-protected sacks, scaling to multi-tonne consignments.
+        </p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://api.whatsapp.com/send?phone=917975210984&text=Hello%20Vaishak!%20I%20need%20a%20quotation%20for%20Pellets%20(Minimum%20100%20KG)." target="_blank" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; background: #25d366; color: #ffffff; box-shadow: 0 4px 14px rgba(37,211,102,0.3);">
+            <span class="material-symbols-outlined" style="font-size: 20px;">chat</span>
+            <span>Get WhatsApp Quote (Min 100 KG)</span>
+          </a>
+          <a href="tel:7975210984" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; background: var(--primary); color: #ffffff; border: 1px solid var(--secondary); box-shadow: var(--shadow-sm);">
+            <span class="material-symbols-outlined" style="font-size: 20px;">call</span>
+            <span>Call Vaishak: 7975210984</span>
+          </a>
+          <a href="pellets.html" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; background: var(--surface-low); color: var(--primary); border: 1px solid var(--surface-border);">
+            <span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+            <span>View Dedicated Pellets Page ➔</span>
+          </a>
         </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 32px;">
-        <a href="pellets.html" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: var(--radius-full); text-decoration: none; font-weight: 700; background: var(--gradient-primary); color: #ffffff; box-shadow: var(--shadow-md);">
-          <span class="material-symbols-outlined">forest</span>
-          <span>View All Types of Pellets &amp; Bulk Supply ➔</span>
-        </a>
       </div>
     </section>
 
@@ -1466,211 +1256,142 @@
       <div class="divider-line"></div>
     </div>
 
-    <!-- 4B. LOCAL DELIVERY COVERAGE & KARNATAKA LOGISTICS (MYSORE, MANDYA, HASSAN, CHAMARAJANAGAR & KARNATAKA) -->
-    <section class="coverage-seo-section" id="coverage">
+    <!-- 4B. FREQUENTLY ASKED QUESTIONS (DROPDOWN ACCORDION) -->
+    <section class="faq-section" id="faq">
       <div class="section-header-center">
         <div class="botanical-badge">
-          <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary-light); vertical-align: middle;">local_shipping</span>
-          <span data-i18n="coverage_badge">🌱 Fresh Delivery & Statewide Supply</span>
+          <span class="material-symbols-outlined" style="font-size: 16px; color: var(--secondary-light); vertical-align: middle;">help</span>
+          <span data-i18n="faq_badge">Got Questions?</span>
         </div>
-        <h2 class="section-title" data-i18n="coverage_title">
-          Fresh Mushroom Delivery & Karnataka Pellets Logistics
+        <h2 class="section-title" data-i18n="faq_title">
+          Frequently Asked Questions (FAQ)
         </h2>
-        <p style="font-size: 0.95rem; color: var(--text-muted); max-width: 780px; margin: 0 auto;" data-i18n="coverage_subtitle">
-          Daily farm harvest delivered exclusively across Mysore &amp; Mandya only • Statewide supply of mushroom spawn and hardwood pellets across all 31 Karnataka districts.
+        <p style="font-size: 0.95rem; color: var(--text-muted); max-width: 780px; margin: 0 auto;" data-i18n="faq_subtitle">
+          Click any question below to view answers about our fresh organic mushrooms, pure spawn, and hardwood pellets.
         </p>
       </div>
 
-      <div class="coverage-grid">
-        <!-- Card 1: Fresh Mushroom Local Delivery (Mysore & Mandya ONLY) -->
-        <div class="coverage-card">
-          <div class="coverage-card-badge">
-            <span class="material-symbols-outlined" style="font-size: 16px;">wb_twilight</span>
-            <span data-i18n="cov_card1_badge">Daily Morning Harvest • Mysore &amp; Mandya Only</span>
-          </div>
-          <h3 class="coverage-card-title" data-i18n="cov_card1_title">
-            Fresh Oyster &amp; Milky Mushrooms (Exclusively Mysore &amp; Mandya)
-          </h3>
-          <p class="coverage-card-desc" data-i18n="cov_card1_desc">
-            Direct farm-to-doorstep delivery harvested fresh every morning at 5:30 AM without cold storage delays or chemical preservatives. Delivered exclusively within Mysore and Mandya to guarantee 100% same-day harvest freshness. Orders outside Mysore &amp; Mandya cannot be fulfilled for fresh produce.
-          </p>
-
-          <div class="coverage-locations-list">
-            <div class="coverage-location-item">
-              <span class="material-symbols-outlined">location_on</span>
-              <div>
-                <strong>Mysore (ಮೈಸೂರು) - Exclusive Delivery:</strong> Daily morning doorstep delivery across Vijayanagar, Kuvempunagar, Saraswathipuram, Gokulam, Jayalakshmipuram, JP Nagar, Hebbal, Bannimantap, and all city limits.
-              </div>
-            </div>
-            <div class="coverage-location-item">
-              <span class="material-symbols-outlined">location_on</span>
-              <div>
-                <strong>Mandya (ಮಂಡ್ಯ) - Exclusive Delivery:</strong> Daily farm-fresh delivery to Mandya city, Maddur, Srirangapatna, Pandavapura, and Malavalli.
-              </div>
-            </div>
-            <div class="coverage-location-item" style="background: rgba(254, 212, 136, 0.1); padding: 10px 14px; border-radius: var(--radius-sm); border-left: 3px solid var(--secondary);">
-              <span class="material-symbols-outlined" style="color: var(--secondary-light);">info</span>
-              <div style="font-size: 0.85rem; color: var(--text-secondary);">
-                <strong>Outside Mysore &amp; Mandya?</strong> Fresh mushrooms are not delivered to other districts to preserve freshness. However, <strong>Mushroom Spawn (₹130/KG)</strong> and <strong>Pellets</strong> are delivered statewide across all 31 Karnataka districts!
-              </div>
-            </div>
-          </div>
-
-          <div class="coverage-action-row">
-            <a href="https://api.whatsapp.com/send?phone=919591185530&text=Hello%20Organic%20Anabe!%20I%20would%20like%20to%20order%20Fresh%20Mushrooms%20for%20delivery." target="_blank" class="btn-contact-action-wa" style="text-decoration: none;">
-              <span class="material-symbols-outlined" style="font-size: 18px;">chat</span>
-              <span>Order Fresh Mushrooms via WhatsApp</span>
-            </a>
-            <a href="tel:9591185530" class="btn-contact-action-call" style="text-decoration: none;">
-              <span class="material-symbols-outlined" style="font-size: 18px;">call</span>
-              <span>Call: 9591185530</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 2: Hardwood Pellets Karnataka Statewide -->
-        <div class="coverage-card">
-          <div class="coverage-card-badge">
-            <span class="material-symbols-outlined" style="font-size: 16px;">forest</span>
-            <span data-i18n="cov_card2_badge">Statewide Substrate Logistics</span>
-          </div>
-          <h3 class="coverage-card-title" data-i18n="cov_card2_title">
-            Mushroom Hardwood Pellets (All Karnataka)
-          </h3>
-          <p class="coverage-card-desc" data-i18n="cov_card2_desc">
-            100% natural compressed hardwood sawdust pellets for mushroom cultivation. Fast dispatch from Min 30 KG trial sacks to multiple commercial tonnes across all Karnataka districts.
-          </p>
-
-          <div class="coverage-locations-list">
-            <div class="coverage-location-item">
-              <span class="material-symbols-outlined">local_shipping</span>
-              <div>
-                <strong>All 31 Karnataka Districts:</strong> Bengaluru, Mysuru, Mandya, Hassan, Chamarajanagar, Shivamogga, Belagavi, Mangaluru, Tumakuru, Hubballi-Dharwad, Udupi, Davanagere, Ballari, and Kalaburagi.
-              </div>
-            </div>
-            <div class="coverage-location-item">
-              <span class="material-symbols-outlined">eco</span>
-              <div>
-                <strong>Pure Broadleaf Hardwood:</strong> Clean sawdust from oak, beech, and broadleaf hardwoods. 100% free from resinous softwoods, glues, and toxic chemicals.
-              </div>
-            </div>
-            <div class="coverage-location-item">
-              <span class="material-symbols-outlined">inventory_2</span>
-              <div>
-                <strong>Commercial Scale:</strong> Available in 30 KG heavy-duty moisture-barrier bags, 500 KG grower pallets, and multi-tonne truck consignments.
-              </div>
-            </div>
-            <div class="coverage-location-item">
-              <span class="material-symbols-outlined">verified</span>
-              <div>
-                <strong>Substrate Suitability:</strong> Ideal for high-yield Oyster, Shiitake, King Oyster, Lion's Mane, and Milky mushroom growing.
-              </div>
-            </div>
-          </div>
-
-          <div class="coverage-action-row">
-            <a href="https://api.whatsapp.com/send?phone=919591185530&text=Hello%20Organic%20Anabe!%20I%20would%20like%20a%20quote%20for%20Mushroom%20Hardwood%20Pellets%20(Karnataka)." target="_blank" class="btn-contact-action-wa" style="text-decoration: none;">
-              <span class="material-symbols-outlined" style="font-size: 18px;">chat</span>
-              <span>Get Pellets Quote on WhatsApp</span>
-            </a>
-            <a href="tel:7975210984" class="btn-contact-action-call" style="text-decoration: none;">
-              <span class="material-symbols-outlined" style="font-size: 18px;">call</span>
-              <span>Bulk Line: 7975210984</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- GOOGLE-FRIENDLY LOCAL SEO FAQ ACCORDION -->
-      <div class="seo-faq-wrap">
-        <h3 class="seo-faq-title" data-i18n="faq_title">
-          Frequently Asked Questions (FAQ) • Karnataka Mushroom & Pellets Guide
-        </h3>
-        <div class="seo-faq-grid">
-          <div class="seo-faq-item">
-            <div class="seo-faq-q">
+      <div class="faq-accordion-wrap">
+        <!-- Item 1 -->
+        <details class="faq-accordion-item" name="faq">
+          <summary class="faq-accordion-summary">
+            <div class="faq-q-text">
               <span class="material-symbols-outlined">help</span>
               <span>What is mushroom spawn?</span>
             </div>
-            <p class="seo-faq-a">
-              Mushroom spawn is the biological seed (pure mycelium cultured on sterilized grain) used to inoculate growing substrates. Organic Anabe supplies certified 1st-generation laboratory Oyster and Milky spawn across Karnataka at ₹130/KG (Min 10 KG).
-            </p>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </summary>
+          <div class="faq-accordion-content">
+            <p>Mushroom spawn is the biological seed (pure mycelium cultured on sterilized grain) used to inoculate growing substrates. Organic Anabe supplies certified 1st-generation laboratory Oyster and Milky spawn across Karnataka at ₹130/KG (Min 10 KG).</p>
           </div>
+        </details>
 
-          <div class="seo-faq-item">
-            <div class="seo-faq-q">
+        <!-- Item 2 -->
+        <details class="faq-accordion-item" name="faq">
+          <summary class="faq-accordion-summary">
+            <div class="faq-q-text">
               <span class="material-symbols-outlined">help</span>
-              <span>Where can I buy oyster mushroom spawn and milky mushroom spawn in Karnataka, and what is the price?</span>
+              <span>Where can I buy oyster and milky mushroom spawn in Karnataka, and what is the price?</span>
             </div>
-            <p class="seo-faq-a">
-              You can buy 1st-generation laboratory-certified <strong>Oyster Mushroom Spawn</strong> (<em>Pleurotus ostreatus</em>) and <strong>Milky Mushroom Spawn</strong> (<em>Calocybe indica</em>) directly from Organic Anabe (ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ). Both varieties are priced at <strong>₹130 per KG</strong> with a 10 KG minimum order quantity (MOQ). Packed in microporous 0.2-micron filter bags and delivered statewide across Mysuru, Bengaluru, Mandya, Hassan, and all 31 districts.
-            </p>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </summary>
+          <div class="faq-accordion-content">
+            <p>You can buy 1st-generation laboratory-certified <strong>Oyster Mushroom Spawn</strong> (<em>Pleurotus ostreatus</em>) and <strong>Milky Mushroom Spawn</strong> (<em>Calocybe indica</em>) directly from Organic Anabe (ಆರ್ಗ್ಯಾನಿಕ್ ಅಣಬೆ). Both varieties are priced at <strong>₹130 per KG</strong> with a 10 KG minimum order quantity (MOQ). Packed in microporous 0.2-micron filter bags and delivered statewide across Mysuru, Bengaluru, Mandya, Hassan, and all 31 districts.</p>
           </div>
+        </details>
 
-          <div class="seo-faq-item">
-            <div class="seo-faq-q">
+        <!-- Item 3 -->
+        <details class="faq-accordion-item" name="faq">
+          <summary class="faq-accordion-summary">
+            <div class="faq-q-text">
               <span class="material-symbols-outlined">help</span>
               <span>What are all the types of pellets available at Organic Anabe?</span>
             </div>
-            <p class="seo-faq-a">
-              Organic Anabe manufactures and distributes all types of <strong>pellets</strong>: 1) 100% natural Broadleaf Hardwood Sawdust Pellets (Oak, Beech) for gourmet mushroom cultivation substrates; 2) High-calorific Biomass Fuel Wood Pellets (~4,500 kcal/kg) for industrial boilers, furnaces, and heating; and 3) Screened Mixed Sawdust Pellets. Available in 30 KG bags, 500 KG jumbo bags, and commercial metric tonne truckloads.
-            </p>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </summary>
+          <div class="faq-accordion-content">
+            <p>Organic Anabe manufactures and distributes all types of <strong>pellets</strong>: 1) 100% natural Broadleaf Hardwood Sawdust Pellets (Oak, Beech) for gourmet mushroom cultivation substrates; 2) High-calorific Biomass Fuel Wood Pellets (~4,500 kcal/kg) for industrial boilers, furnaces, and heating; and 3) Screened Mixed Sawdust Pellets. Available in 100 KG bags, 500 KG jumbo bags, and commercial metric tonne truckloads.</p>
           </div>
+        </details>
 
-          <div class="seo-faq-item">
-            <div class="seo-faq-q">
+        <!-- Item 4 -->
+        <details class="faq-accordion-item" name="faq">
+          <summary class="faq-accordion-summary">
+            <div class="faq-q-text">
               <span class="material-symbols-outlined">help</span>
               <span>Can hardwood pellets be used for mushroom farming?</span>
             </div>
-            <p class="seo-faq-a">
-              Yes! 100% pure broadleaf hardwood sawdust pellets provide an optimal, chemical-free substrate for cultivating high-yield Oyster, Shiitake, and Milky mushrooms. Available in 30 KG bags to bulk tonnes across Karnataka.
-            </p>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </summary>
+          <div class="faq-accordion-content">
+            <p>Yes! 100% pure broadleaf hardwood sawdust pellets provide an optimal, chemical-free substrate for cultivating high-yield Oyster, Shiitake, and Milky mushrooms. Available in 100 KG bags to bulk tonnes across Karnataka.</p>
           </div>
+        </details>
 
-          <div class="seo-faq-item">
-            <div class="seo-faq-q">
+        <!-- Item 5 -->
+        <details class="faq-accordion-item" name="faq">
+          <summary class="faq-accordion-summary">
+            <div class="faq-q-text">
               <span class="material-symbols-outlined">help</span>
               <span>What is the minimum order quantity for mushroom spawn and pellets?</span>
             </div>
-            <p class="seo-faq-a">
-              For Mushroom Spawn (both Oyster and Milky), the minimum order quantity is <strong>10 KG</strong> (which can be split 50:50 between Oyster and Milky upon request). For Pellets, the minimum order is <strong>30 KG</strong> in heavy moisture-protected sacks, scalable up to commercial truckloads.
-            </p>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </summary>
+          <div class="faq-accordion-content">
+            <p>For Mushroom Spawn (both Oyster and Milky), the minimum order quantity is <strong>10 KG</strong> (which can be split 50:50 between Oyster and Milky upon request). For Pellets, the minimum order is <strong>100 KG</strong> in heavy moisture-protected sacks, scalable up to commercial truckloads.</p>
           </div>
+        </details>
 
-          <div class="seo-faq-item">
-            <div class="seo-faq-q">
+        <!-- Item 6 -->
+        <details class="faq-accordion-item" name="faq">
+          <summary class="faq-accordion-summary">
+            <div class="faq-q-text">
               <span class="material-symbols-outlined">help</span>
-              <span>Where can I buy fresh organic Oyster and Milky mushrooms online in Mysore & Mandya?</span>
+              <span>Where can I buy fresh organic Oyster and Milky mushrooms online in Mysore &amp; Mandya?</span>
             </div>
-            <p class="seo-faq-a">
-              You can order farm-fresh Oyster and Milky mushrooms directly through Organic Anabe. We harvest daily at dawn (5:30 AM) and deliver fresh to households, cafes, and health kitchens <strong>EXCLUSIVELY within Mysore and Mandya only</strong> to preserve peak morning freshness. Orders outside Mysore &amp; Mandya cannot be accepted for fresh mushrooms. (Mushroom Spawn &amp; Pellets are shipped statewide across all 31 Karnataka districts). Contact WhatsApp: 9591185530.
-            </p>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </summary>
+          <div class="faq-accordion-content">
+            <p>You can order farm-fresh Oyster and Milky mushrooms directly through Organic Anabe. We harvest daily at dawn (5:30 AM) and deliver fresh to households, cafes, and health kitchens <strong>EXCLUSIVELY within Mysore and Mandya only</strong> to preserve peak morning freshness. Orders outside Mysore &amp; Mandya cannot be accepted for fresh mushrooms. (Mushroom Spawn &amp; Pellets are shipped statewide across all 31 Karnataka districts). Contact WhatsApp: 9591185530.</p>
           </div>
+        </details>
 
-          <div class="seo-faq-item">
-            <div class="seo-faq-q">
+        <!-- Item 7 -->
+        <details class="faq-accordion-item" name="faq">
+          <summary class="faq-accordion-summary">
+            <div class="faq-q-text">
               <span class="material-symbols-outlined">help</span>
               <span>Why are Organic Anabe mushrooms and spawn superior?</span>
             </div>
-            <p class="seo-faq-a">
-              Our mushrooms and spawn are 100% organic, produced in sterile laboratory environments with HEPA filtration and steam autoclaving. Zero chemical sprays, zero bleaching agents, and direct farm dispatch ensure maximum freshness, high biological efficiency (100–140%), and disease-free cultivation flushes.
-            </p>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </summary>
+          <div class="faq-accordion-content">
+            <p>Our mushrooms and spawn are 100% organic, produced in sterile laboratory environments with HEPA filtration and steam autoclaving. Zero chemical sprays, zero bleaching agents, and direct farm dispatch ensure maximum freshness, high biological efficiency (100–140%), and disease-free cultivation flushes.</p>
           </div>
+        </details>
 
-          <div class="seo-faq-item">
-            <div class="seo-faq-q">
+        <!-- Item 8 -->
+        <details class="faq-accordion-item" name="faq">
+          <summary class="faq-accordion-summary">
+            <div class="faq-q-text">
               <span class="material-symbols-outlined">help</span>
-              <span>Do you supply bulk mushrooms and pellets for commercial facilities & hotels?</span>
+              <span>Do you supply bulk mushrooms and pellets for commercial facilities &amp; hotels?</span>
             </div>
-            <p class="seo-faq-a">
-              Yes! We provide bulk commercial supplies of fresh mushrooms to restaurants, caterers, and organic stores, as well as multiple-tonne shipments of hardwood and biomass fuel pellets for industrial heating plants across Karnataka. Contact Vaishak on our bulk hotline: 7975210984.
-            </p>
+            <span class="material-symbols-outlined faq-chevron">expand_more</span>
+          </summary>
+          <div class="faq-accordion-content">
+            <p>Yes! We provide bulk commercial supplies of fresh mushrooms to restaurants, caterers, and organic stores, as well as multiple-tonne shipments of hardwood and biomass fuel pellets for industrial heating plants across Karnataka. Contact Vaishak on our bulk hotline: 7975210984.</p>
           </div>
-        </div>
+        </details>
       </div>
     </section>
 
-
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider">
+      <div class="divider-line"></div>
+      <div class="divider-flourish">❦ ✦ ❦</div>
+      <div class="divider-line"></div>
+    </div>
 
     <!-- 5. ABOUT US SECTION (THE ORGANIC ANABE STORY) -->
     <section class="about-section" id="about">

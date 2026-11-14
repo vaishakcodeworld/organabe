@@ -85,15 +85,15 @@ const translations = {
     // Hardwood Pellets Section - All Types of Pellets
     pellets_badge: "All Types of Pellets • Mushroom Substrate & Biomass Fuel",
     pellets_title: "All Types of Pellets: Premium Mushroom Hardwood & Biomass Pellets",
-    pellets_desc: "100% natural, chemical-free compressed hardwood sawdust pellets, biomass heating pellets, and mushroom cultivation substrates. Supplied across Karnataka and India in 30 KG bags to commercial tonnes.",
-    pellets_min_order: "Orders: Minimum 30 KG and goes up to multiple Tonnes",
+    pellets_desc: "100% natural, chemical-free compressed hardwood sawdust pellets, biomass heating pellets, and mushroom cultivation substrates. Supplied across Karnataka and India in 100 KG bags to commercial tonnes.",
+    pellets_min_order: "Orders: Minimum 100 KG and goes up to multiple Tonnes",
     pellets_perk_1_title: "All Pellets Types: Substrate & Biomass",
     pellets_perk_1_desc: "Broadleaf Hardwood Pellets for mushroom cultivation (Oak, Beech) plus High-Calorific Biomass Wood Pellets for industrial boilers and heating.",
     pellets_perk_2_title: "Fast Hydration & Maximum Mushroom Yield",
     pellets_perk_2_desc: "Hydrates evenly with hot water or steam pasteurization, promoting rapid, vigorous mycelium colonisation.",
-    pellets_perk_3_title: "From 30 KG Bags to Commercial Tonnes",
+    pellets_perk_3_title: "From 100 KG Bags to Commercial Tonnes",
     pellets_perk_3_desc: "Packed in sturdy moisture-protected sacks. Convenient supply for home growers, commercial farms, and agricultural units across Karnataka.",
-    btn_pellets_quote: "Order / Inquire for Pellets (Min 30 KG)",
+    btn_pellets_quote: "Order / Inquire for Pellets (Min 100 KG)",
 
     // About Us Section (The Organic Anabe Story)
     about_badge: "Our Roots & Journey",
@@ -230,15 +230,15 @@ const translations = {
     // Hardwood Pellets Section - All Types of Pellets (Kannada)
     pellets_badge: "ಎಲ್ಲಾ ಬಗೆಯ ಪೆಲ್ಲೆಟ್‌ಗಳು • ಅಣಬೆ ತಲಾಧಾರ & ಬಯೋಮಾಸ್ ಇಂಧನ",
     pellets_title: "ಎಲ್ಲಾ ಬಗೆಯ ಪೆಲ್ಲೆಟ್‌ಗಳು: ಪ್ರೀಮಿಯಂ ಮಶ್ರೂಮ್ ಹಾರ್ಡ್‌ವುಡ್ & ಬಯೋಮಾಸ್ ಪೆಲ್ಲೆಟ್‌ಗಳು",
-    pellets_desc: "100% ನೈಸರ್ಗಿಕ, ರಾಸಾಯನಿಕ ಮುಕ್ತ ಒತ್ತಡದ ಹಾರ್ಡ್‌ವುಡ್ ಮರದ ಪುಡಿ ಪೆಲ್ಲೆಟ್‌ಗಳು, ಬಾಯ್ಲರ್ ಬಯೋಮಾಸ್ ಪೆಲ್ಲೆಟ್‌ಗಳು ಮತ್ತು ಅಣಬೆ ತಲಾಧಾರ. ಕನಿಷ್ಠ 30 KG ಇಂದ ವಾಣಿಜ್ಯ ಟನ್‌ಗಳವರೆಗೆ ಸರಬರಾಜು.",
-    pellets_min_order: "ಕನಿಷ್ಠ 30 KG ಇಂದ ಹಲವಾರು ಟನ್‌ಗಳವರೆಗೆ ಸರಬರಾಜು",
+    pellets_desc: "100% ನೈಸರ್ಗಿಕ, ರಾಸಾಯನಿಕ ಮುಕ್ತ ಒತ್ತಡದ ಹಾರ್ಡ್‌ವುಡ್ ಮರದ ಪುಡಿ ಪೆಲ್ಲೆಟ್‌ಗಳು, ಬಾಯ್ಲರ್ ಬಯೋಮಾಸ್ ಪೆಲ್ಲೆಟ್‌ಗಳು ಮತ್ತು ಅಣಬೆ ತಲಾಧಾರ. ಕನಿಷ್ಠ 100 KG ಇಂದ ವಾಣಿಜ್ಯ ಟನ್‌ಗಳವರೆಗೆ ಸರಬರಾಜು.",
+    pellets_min_order: "ಕನಿಷ್ಠ 100 KG ಇಂದ ಹಲವಾರು ಟನ್‌ಗಳವರೆಗೆ ಸರಬರಾಜು",
     pellets_perk_1_title: "ಎಲ್ಲಾ ವಿಧದ ಪೆಲ್ಲೆಟ್‌ಗಳು: ತಲಾಧಾರ & ಬಯೋಮಾಸ್",
     pellets_perk_1_desc: "ಅಣಬೆ ಕೃಷಿಗೆ ಶುದ್ಧ ಹಾರ್ಡ್‌ವುಡ್ (ಓಕ್, ಬೀಚ್) ಪೆಲ್ಲೆಟ್‌ಗಳು ಮತ್ತು ಕೈಗಾರಿಕಾ ಬಾಯ್ಲರ್‌ಗಳಿಗೆ ಅಧಿಕ ಕ್ಯಾಲೋರಿ ಬಯೋಮಾಸ್ ಪೆಲ್ಲೆಟ್‌ಗಳು.",
     pellets_perk_2_title: "ತ್ವರಿತ ತೇವಾಂಶ & ಗರಿಷ್ಠ ಅಣಬೆ ಇಳುವರಿ",
     pellets_perk_2_desc: "ಬಿಸಿ ನೀರಿನಲ್ಲಿ ಸುಲಭವಾಗಿ ಕರಗಿ ಮೈಸಿಲಿಯಮ್ (ಬೀಜಕಣ) ತ್ವರಿತವಾಗಿ ಹರಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.",
-    pellets_perk_3_title: "30 KG ಚೀಲದಿಂದ ಟನ್‌ಗಳವರೆಗೆ ಪೂರೈಕೆ",
+    pellets_perk_3_title: "100 KG ಚೀಲದಿಂದ ಟನ್‌ಗಳವರೆಗೆ ಪೂರೈಕೆ",
     pellets_perk_3_desc: "ಮನೆ ಕೃಷಿಕರು ಹಾಗೂ ವಾಣಿಜ್ಯ ಅಣಬೆ ಫಾರ್ಮ್‌ಗಳಿಗೆ ಕರ್ನಾಟಕದಾದ್ಯಂತ ಸುರಕ್ಷಿತ ಚೀಲಗಳಲ್ಲಿ ರವಾನೆ.",
-    btn_pellets_quote: "ಪೆಲ್ಲೆಟ್‌ಗಳ ವಿವರ ಹಾಗೂ ಆರ್ಡರ್ (ಕನಿಷ್ಠ 30 KG)",
+    btn_pellets_quote: "ಪೆಲ್ಲೆಟ್‌ಗಳ ವಿವರ ಹಾಗೂ ಆರ್ಡರ್ (ಕನಿಷ್ಠ 100 KG)",
 
     // About Us Section (The Organic Anabe Story)
     about_badge: "ನಮ್ಮ ಆರಂಭದ ಕಥೆ",

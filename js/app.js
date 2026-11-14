@@ -375,108 +375,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // -------------------------------------------------------------
-  // 5B. Interactive Mushroom Spawn Bulk Calculator Logic (₹130/KG, Min 10 KG)
+  // FAQ Dropdown Accordion (Exclusive One-Open-At-A-Time Behavior)
   // -------------------------------------------------------------
-  const spawnPresetChips = document.querySelectorAll('.spawn-chip-btn');
-  const spawnQtyInput = document.getElementById('spawn-qty-input');
-  const spawnDistSelect = document.getElementById('spawn-district-select');
-  const spawnVarietySelect = document.getElementById('spawn-variety-select');
-  const calcSpawnOutQty = document.getElementById('calc-spawn-out-qty');
-  const calcSpawnOutBags = document.getElementById('calc-spawn-out-bags');
-  const calcSpawnOutRate = document.getElementById('calc-spawn-out-rate');
-  const calcSpawnOutTotal = document.getElementById('calc-spawn-out-total');
-  const calcSpawnOutSubstrate = document.getElementById('calc-spawn-out-substrate');
-  const calcSpawnOutYield = document.getElementById('calc-spawn-out-yield');
-  const calcSpawnOutDist = document.getElementById('calc-spawn-out-dist');
-  const btnSpawnWaCalc = document.getElementById('btn-spawn-wa-calc');
-
-  function calculateSpawnSpecs() {
-    let qty = 10;
-    if (spawnQtyInput) {
-      qty = parseInt(spawnQtyInput.value, 10);
-      if (isNaN(qty) || qty < 10) qty = 10;
-    }
-
-    const rate = 130;
-    const totalAmount = qty * rate;
-    const bags = qty; // standard 1 KG autoclave filter bags
-    const estSubstrate = qty * 10; // 1 kg spawn inoculates ~10 kg dry substrate
-    const estYieldMin = qty * 10;
-    const estYieldMax = Math.round(qty * 14);
-    const district = spawnDistSelect ? spawnDistSelect.value : "Mysuru";
-
-    if (calcSpawnOutQty) calcSpawnOutQty.textContent = `${qty} KG`;
-    if (calcSpawnOutBags) calcSpawnOutBags.textContent = `${bags} x 1 KG Sterile Filter Bags`;
-    if (calcSpawnOutRate) calcSpawnOutRate.textContent = `₹${rate} / KG`;
-    if (calcSpawnOutTotal) calcSpawnOutTotal.textContent = `₹${totalAmount.toLocaleString('en-IN')}`;
-    if (calcSpawnOutSubstrate) calcSpawnOutSubstrate.textContent = `~${estSubstrate} KG Straw / Pellets`;
-    if (calcSpawnOutYield) calcSpawnOutYield.textContent = `~${estYieldMin} – ${estYieldMax} KG Fresh`;
-    if (calcSpawnOutDist) calcSpawnOutDist.textContent = `${district}, Karnataka`;
-  }
-
-  if (spawnPresetChips.length > 0) {
-    spawnPresetChips.forEach((chip) => {
-      chip.addEventListener('click', () => {
-        spawnPresetChips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        const chipQty = chip.getAttribute('data-qty');
-        if (spawnQtyInput && chipQty) {
-          spawnQtyInput.value = chipQty;
-          calculateSpawnSpecs();
+  const allFaqItems = document.querySelectorAll('.faq-accordion-item');
+  if (allFaqItems.length > 0) {
+    allFaqItems.forEach((item) => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          allFaqItems.forEach((other) => {
+            if (other !== item && other.open) {
+              other.removeAttribute('open');
+            }
+          });
         }
       });
-    });
-  }
-
-  if (spawnQtyInput) {
-    spawnQtyInput.addEventListener('input', () => {
-      const currentVal = spawnQtyInput.value;
-      spawnPresetChips.forEach(chip => {
-        if (chip.getAttribute('data-qty') === currentVal) {
-          chip.classList.add('active');
-        } else {
-          chip.classList.remove('active');
-        }
-      });
-      calculateSpawnSpecs();
-    });
-  }
-
-  if (spawnDistSelect) {
-    spawnDistSelect.addEventListener('change', calculateSpawnSpecs);
-  }
-  if (spawnVarietySelect) {
-    spawnVarietySelect.addEventListener('change', calculateSpawnSpecs);
-  }
-
-  if (btnSpawnWaCalc) {
-    btnSpawnWaCalc.addEventListener('click', (e) => {
-      e.preventDefault();
-      let qty = 10;
-      if (spawnQtyInput) {
-        qty = parseInt(spawnQtyInput.value, 10);
-        if (isNaN(qty) || qty < 10) qty = 10;
-      }
-      const rate = 130;
-      const totalAmount = qty * rate;
-      const district = spawnDistSelect ? spawnDistSelect.value : "Mysuru";
-      const variety = spawnVarietySelect ? spawnVarietySelect.value : "Oyster Mushroom Spawn";
-      const estYieldMin = qty * 10;
-      const estYieldMax = Math.round(qty * 14);
-
-      const msg = `*Order / Inquiry: Mushroom Spawn (₹130/KG - Min 10 KG)*\n` +
-                  `-----------------------------------------------------\n` +
-                  `• *Spawn Variety:* ${variety}\n` +
-                  `• *Quantity:* ${qty} KG (${qty} x 1 KG Sterile Autoclave Bags)\n` +
-                  `• *Price per KG:* ₹130 / KG\n` +
-                  `• *Total Estimated Amount:* ₹${totalAmount.toLocaleString('en-IN')}\n` +
-                  `• *Destination District:* ${district}, Karnataka\n` +
-                  `• *Spawn Quality:* 1st Generation Laboratory Grain Culture (100% Contamination Free)\n` +
-                  `• *Est. Mushroom Yield:* ~${estYieldMin} – ${estYieldMax} KG Fresh\n` +
-                  `-----------------------------------------------------\n` +
-                  `Hello Organic Anabe! I would like to order ${qty} KG ${variety} to be delivered to ${district}. Please share dispatch time and payment details. Thank you!`;
-
-      sendDirectWhatsApp(msg, "919591185530");
     });
   }
 

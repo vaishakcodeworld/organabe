@@ -5949,4 +5949,115 @@ body[data-lang="kn"] h3 {
     max-width: 100% !important;
     width: 100% !important;
   }
-}
+}
+/* ==========================================================================
+   INTERACTIVE FAQ DROPDOWN ACCORDION
+   ========================================================================== */
+.faq-section {
+  padding: 60px 20px 80px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.faq-accordion-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.faq-accordion-item {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-accordion-item:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 4px 16px rgba(13, 40, 24, 0.06);
+}
+
+.faq-accordion-item[open] {
+  background: #ffffff;
+  border-color: var(--secondary);
+  box-shadow: 0 8px 24px -4px rgba(13, 40, 24, 0.1);
+}
+
+.faq-accordion-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  font-weight: 700;
+  color: var(--text-main);
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.faq-accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-q-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.faq-q-text .material-symbols-outlined {
+  color: var(--secondary-hover);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.faq-chevron {
+  color: var(--text-muted);
+  font-size: 22px;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.faq-accordion-item[open] .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--secondary-hover);
+}
+
+.faq-accordion-item[open] .faq-accordion-summary {
+  color: var(--primary);
+}
+
+.faq-accordion-content {
+  padding: 14px 24px 20px 56px;
+  color: var(--text-muted);
+  font-size: 0.93rem;
+  line-height: 1.7;
+  border-top: 1px solid rgba(228, 224, 215, 0.5);
+  animation: fadeInFaq 0.25s ease;
+}
+
+.faq-accordion-content p {
+  margin: 0;
+}
+
+@keyframes fadeInFaq {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .faq-accordion-summary {
+    padding: 14px 16px;
+    font-size: 0.92rem;
+  }
+  .faq-accordion-content {
+    padding: 12px 16px 16px 16px;
+    font-size: 0.88rem;
+  }
+}
