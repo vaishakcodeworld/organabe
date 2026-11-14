@@ -36,6 +36,17 @@ const translations = {
     hero_trust_4: "Mushroom Spawn (₹130/kg) & Hardwood Pellets",
 
     // Dual Mushroom Hero Cards
+    // Special Offerings: Dry Oyster & Event Bulk Orders
+    dry_oyster_badge: "100% Sun-Dried • Long Shelf Life",
+    dry_oyster_title: "Dry Oyster Mushrooms (ಒಣ ಸಿಂಪಿ ಅಣಬೆ)",
+    dry_oyster_desc: "We also sell premium sun-dried Oyster mushrooms with concentrated umami, high protein, and zero chemical preservatives. Rehydrates in warm water in 10 minutes. Delivered all across India.",
+    btn_order_dry_oyster: "Order Dry Oyster on WhatsApp",
+
+    bulk_event_badge: "Direct Farm Harvest • Special Event Rates",
+    bulk_event_title: "Fresh Oyster Mushroom Bulk Orders for Events",
+    bulk_event_desc: "We also take bulk orders of fresh Oyster mushrooms for weddings, receptions, parties, catering services, religious functions, and hotels. Harvested fresh at dawn on your event morning.",
+    btn_order_bulk_event: "Book Event Bulk Order on WhatsApp",
+
     hero_oyster_title: "Fresh Oyster Mushroom",
     hero_oyster_sci: "Soft, tender petals • Cooks in 10 minutes",
     hero_oyster_desc: "Delicate fan-shaped mushrooms that soak up rich spices. Great for quick pepper roasts, curries, crispy pakodas, and daily healthy meals.",
@@ -182,6 +193,17 @@ const translations = {
     hero_trust_2: "ಮುಂಜಾನೆ 5:30 ರ ತಾಜಾ ಕೊಯ್ಲು",
     hero_trust_3: "ತೋಟದಿಂದ ನೇರ ಮನೆಗೆ ತಲುಪಿಸುವಿಕೆ",
     hero_trust_4: "ಅಣಬೆ ಬೀಜಗಳು (₹130/kg) & ಪೆಲ್ಲೆಟ್‌ಗಳು",
+
+    // Special Offerings: Dry Oyster & Event Bulk Orders
+    dry_oyster_badge: "100% ನೈಸರ್ಗಿಕ ಒಣಗಿಸಿದ ಅಣಬೆ • ದೀರ್ಘ ಬಾಳಿಕೆ",
+    dry_oyster_title: "ಒಣ ಸಿಂಪಿ ಅಣಬೆ (Dry Oyster Mushrooms)",
+    dry_oyster_desc: "ಹೆಚ್ಚಿನ ಪ್ರೋಟೀನ್ ಮತ್ತು ಪೋಷಕಾಂಶಗಳಿರುವ ನೈಸರ್ಗಿಕ ಒಣ ಸಿಂಪಿ ಅಣಬೆಗಳು ನಮ್ಮಲ್ಲಿ ಲಭ್ಯವಿವೆ. ಸೂಪ್, ಸಾಂಬಾರ್ ಮತ್ತು ಗ್ರೇವಿಗಳಿಗೆ ಅತ್ಯುತ್ತಮ. 12 ತಿಂಗಳ ಬಾಳಿಕೆ ಮತ್ತು ಭಾರತದಾದ್ಯಂತ ಕೊರಿಯರ್ ವಿತರಣೆ.",
+    btn_order_dry_oyster: "ಒಣ ಸಿಂಪಿ ಅಣಬೆ ಆರ್ಡರ್ ಮಾಡಿ (WhatsApp)",
+
+    bulk_event_badge: "ನೇರ ತೋಟದ ಕೊಯ್ಲು • ವಿಶೇಷ ರಿಯಾಯಿತಿ",
+    bulk_event_title: "ಮದುವೆ, ಸಮಾರಂಭಗಳಿಗೆ ತಾಜಾ ಸಿಂಪಿ ಅಣಬೆ ಬೃಹತ್ ಆರ್ಡರ್",
+    bulk_event_desc: "ಮದುವೆ, ಸತ್ಕಾರಕೂಟ, ಪಾರ್ಟಿ, ಕ್ಯಾಟರಿಂಗ್ ಹಾಗೂ ಹೋಟೆಲ್‌ಗಳಿಗೆ ತಾಜಾ ಸಿಂಪಿ ಅಣಬೆಗಳ ಬೃಹತ್ ಆರ್ಡರ್‌ಗಳನ್ನು ನಾವು ಸ್ವೀಕರಿಸುತ್ತೇವೆ. ಕಾರ್ಯಕ್ರಮದ ದಿನ ಮುಂಜಾನೆಯೇ ಕೊಯ್ಲು ಮಾಡಿ ತಲುಪಿಸಲಾಗುತ್ತದೆ.",
+    btn_order_bulk_event: "ಸಮಾರಂಭಗಳ ಬೃಹತ್ ಆರ್ಡರ್ (WhatsApp)",
 
     hero_oyster_title: "ತಾಜಾ ಸಿಂಪಿ ಅಣಬೆ (Oyster)",
     hero_oyster_sci: "ಮೃದುವಾದ ದಳಗಳು • 10 ನಿಮಿಷದಲ್ಲಿ ಸಿದ್ಧ",
