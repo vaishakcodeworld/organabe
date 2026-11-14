@@ -6070,7 +6070,7 @@ body[data-lang="kn"] h3 {
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   max-width: 1040px;
-  margin: 32px auto 0;
+  margin: 28px auto 0;
   width: 100%;
 }
 
@@ -6143,7 +6143,7 @@ body[data-lang="kn"] h3 {
   padding: 22px 24px 24px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 1;
 }
 
 .special-offering-head {
@@ -6194,12 +6194,12 @@ body[data-lang="kn"] h3 {
 
 .special-offering-actions {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   margin-top: auto;
 }
 
 .btn-special-wa {
+  flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -6207,12 +6207,13 @@ body[data-lang="kn"] h3 {
   background: #25d366;
   color: #0b2216;
   font-weight: 700;
-  font-size: 0.92rem;
-  padding: 12px 18px;
+  font-size: 0.88rem;
+  padding: 11px 16px;
   border-radius: var(--radius-md);
   text-decoration: none;
   transition: all 0.2s ease;
   box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+  white-space: nowrap;
 }
 
 .btn-special-wa:hover {
@@ -6222,23 +6223,25 @@ body[data-lang="kn"] h3 {
 }
 
 .btn-special-call {
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
   font-weight: 600;
   font-size: 0.85rem;
-  padding: 9px 16px;
+  padding: 11px 16px;
   border-radius: var(--radius-md);
   text-decoration: none;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .btn-special-call:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.18);
   border-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -6246,8 +6249,19 @@ body[data-lang="kn"] h3 {
   .special-offerings-grid {
     grid-template-columns: 1fr;
     gap: 18px;
+    margin-top: 20px;
   }
   .special-offering-imgwrap {
-    height: 190px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 520px) {
+  .special-offering-actions {
+    flex-direction: column;
+  }
+  .btn-special-wa,
+  .btn-special-call {
+    width: 100%;
   }
 }
