@@ -1,0 +1,24 @@
+{
+  "name": "Organic Anabe",
+  "short_name": "Organic Anabe",
+  "icons": [
+    {
+      "src": "assets/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo.png",
+      "sizes": "628x628",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0d2818",
+  "background_color": "#081a10",
+  "display": "standalone"
+}
