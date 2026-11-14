@@ -6063,7 +6063,7 @@ body[data-lang="kn"] h3 {
 }
 
 /* ==========================================================================
-   SPECIAL OFFERINGS: DRY OYSTER MUSHROOMS & EVENT BULK ORDERS
+   SPECIAL OFFERINGS: DRY OYSTER & BULK EVENTS
    ========================================================================== */
 .special-offerings-grid {
   display: grid;
@@ -6078,47 +6078,91 @@ body[data-lang="kn"] h3 {
   background: rgba(13, 40, 24, 0.78);
   border: 1.5px solid rgba(197, 160, 89, 0.4);
   border-radius: var(--radius-xl);
-  padding: 24px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
 
 .special-offering-card:hover {
   transform: translateY(-4px);
   border-color: var(--secondary);
-  box-shadow: 0 12px 32px rgba(197, 160, 89, 0.2);
+  box-shadow: 0 20px 48px rgba(197, 160, 89, 0.25);
 }
 
-.special-offering-badge {
+.special-offering-imgwrap {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #081a10;
+}
+
+.special-offering-imgwrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.special-offering-card:hover .special-offering-imgwrap img {
+  transform: scale(1.05);
+}
+
+.special-offering-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(254, 212, 136, 0.15);
+  background: rgba(13, 40, 24, 0.88);
   border: 1px solid var(--secondary);
   color: var(--secondary-light);
-  padding: 4px 12px;
+  padding: 5px 12px;
   border-radius: var(--radius-full);
   font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  width: fit-content;
-  margin-bottom: 12px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+.special-offering-tag.event-tag {
+  border-color: #25d366;
+  color: #25d366;
+}
+
+.special-offering-body {
+  padding: 22px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.special-offering-head {
+  margin-bottom: 8px;
 }
 
 .special-offering-title {
   font-family: var(--font-serif);
   font-size: 1.35rem;
   color: #ffffff;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   line-height: 1.25;
+}
+
+.special-offering-sci {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--secondary-light);
+  display: block;
 }
 
 .special-offering-desc {
@@ -6133,48 +6177,48 @@ body[data-lang="kn"] h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .special-offering-pill {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  background: rgba(255, 255, 255, 0.08);
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-full);
   padding: 4px 10px;
-  font-size: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.9);
-  font-weight: 600;
 }
 
 .special-offering-actions {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
 }
 
 .btn-special-wa {
-  flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 18px;
-  border-radius: var(--radius-full);
   background: #25d366;
-  color: #ffffff;
-  text-decoration: none;
+  color: #0b2216;
   font-weight: 700;
-  font-size: 0.84rem;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  font-size: 0.92rem;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
   transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
 }
 
 .btn-special-wa:hover {
-  background: #20ba57;
-  transform: translateY(-1px);
+  background: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
 }
 
 .btn-special-call {
@@ -6182,25 +6226,28 @@ body[data-lang="kn"] h3 {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 10px 16px;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 9px 16px;
+  border-radius: var(--radius-md);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.84rem;
   transition: all 0.2s ease;
 }
 
 .btn-special-call:hover {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
   .special-offerings-grid {
     grid-template-columns: 1fr;
-    max-width: 480px;
+    gap: 18px;
+  }
+  .special-offering-imgwrap {
+    height: 190px;
   }
 }
